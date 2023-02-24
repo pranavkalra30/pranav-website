@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
 
-const AboutMe = () => {
+const AboutMe2 = () => {
   return (
     <div>
       <TypeAnimation
@@ -22,4 +22,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default AboutMe2;
