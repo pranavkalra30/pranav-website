@@ -4,7 +4,6 @@ import SpeedDial from "@mui/material/SpeedDial";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import EmailIcon from "@mui/icons-material/Email";
-import SaveIcon from "@mui/icons-material/Save";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -18,8 +17,8 @@ export default function ContactMeSpeedDial() {
   return (
     <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
       <SpeedDial
-        ariaLabel="SpeedDial basic example"
-        sx={{ position: "absolute", bottom: 16, right: 16 }}
+        ariaLabel="Contact"
+        sx={{ position: "absolute", bottom: 100, right: 16 }}
         icon={<ContactMailIcon />}
       >
         {actions.map((action) => (

@@ -6,6 +6,7 @@ import AboutMeAnimationFile from "./aboutMeAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
+import Card from "@mui/material/Card";
 
 const AboutMe = () => {
   return (
@@ -40,10 +41,14 @@ const AboutMe = () => {
           <br />
           <br />
           <Grow in={true}>
-            <Typography style={{ fontSize: "30px" }}>
-              My main areas of expertise include Javascript, Typescript,
-              Node.js, HTML, CSS, php and Python.
-            </Typography>
+            <Card
+              sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
+            >
+              <Typography style={{ fontSize: "30px", color: "white" }}>
+                My main areas of expertise include Javascript, Typescript,
+                Node.js, HTML, CSS, php and Python.
+              </Typography>
+            </Card>
           </Grow>
           <br />
           <br />
