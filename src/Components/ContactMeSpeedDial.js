@@ -17,8 +17,9 @@ export default function ContactMeSpeedDial() {
   return (
     <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
       <SpeedDial
+        direction={"down"}
         ariaLabel="Contact"
-        sx={{ position: "absolute", bottom: 100, right: 16 }}
+        sx={{ position: "absolute", right: 16 }}
         icon={<ContactMailIcon />}
       >
         {actions.map((action) => (

@@ -5,6 +5,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
+import ContactMeSpeedDial from "./ContactMeSpeedDial";
 
 const PrimaryAppBar = () => {
   const [value, setValue] = React.useState(2);
@@ -23,6 +24,7 @@ const PrimaryAppBar = () => {
         <BottomNavigationAction label="About Me" icon={<PersonIcon />} />
         <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
       </BottomNavigation>
+      <ContactMeSpeedDial />
     </div>
   );
 };
