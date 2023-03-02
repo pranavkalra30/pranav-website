@@ -7,26 +7,28 @@ import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
 import ContactMeSpeedDial from "./ContactMeSpeedDial";
 
-const PrimaryAppBar = () => {
-  const [value, setValue] = React.useState(2);
+class PrimaryAppBar extends React.Component {
+  render() {
+    const { handlePage, appPageValue } = this.props;
 
-  return (
-    <div>
-      <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        showLabels
-      >
-        <BottomNavigationAction label="Experience" icon={<ScienceIcon />} />
-        <BottomNavigationAction label="Projects" icon={<DevicesIcon />} />
-        <BottomNavigationAction label="About Me" icon={<PersonIcon />} />
-        <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
-      </BottomNavigation>
-      <ContactMeSpeedDial />
-    </div>
-  );
-};
+    return (
+      <div>
+        <BottomNavigation
+          value={appPageValue}
+          onChange={(event, newValue) => {
+            console.log(newValue);
+            handlePage(newValue);
+          }}
+          showLabels
+        >
+          <BottomNavigationAction label="Experience" icon={<ScienceIcon />} />
+          <BottomNavigationAction label="Projects" icon={<DevicesIcon />} />
+          <BottomNavigationAction label="About Me" icon={<PersonIcon />} />
+          <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
+        </BottomNavigation>
+      </div>
+    );
+  }
+}
 
 export default PrimaryAppBar;

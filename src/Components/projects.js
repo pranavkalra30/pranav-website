@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
-import AboutMeAnimationFile from "./aboutMeAnimation";
+import ProjectsAnimationFile from "./projectsAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
@@ -12,11 +12,11 @@ const StyledTypography = styled("Typography")({
   color: "aliceblue",
 });
 
-const AboutMe = () => {
+const Projects = () => {
   return (
     <div>
-      <Typography> Hello! My name is Pranav Kalra.</Typography>
-      <Typography> I am a frontend developer</Typography>
+      <Typography> I love making projects.</Typography>
+      <Typography> Some of the ones I worked on are: </Typography>
 
       <Box
         style={{
@@ -36,10 +36,7 @@ const AboutMe = () => {
             <Card
               sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
             >
-              <StyledTypography>
-                My main areas of expertise include Javascript, Typescript,
-                Node.js, HTML, CSS, php and Python.
-              </StyledTypography>
+              <StyledTypography>Projects - The Movie Search</StyledTypography>
             </Card>
           </Grow>
           <br />
@@ -51,7 +48,7 @@ const AboutMe = () => {
         </Box>
         <Grow in={true}>
           <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <AboutMeAnimationFile />
+            <ProjectsAnimationFile />
           </Card>
         </Grow>
       </Box>
@@ -59,4 +56,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Projects;
