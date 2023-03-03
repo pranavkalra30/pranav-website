@@ -26,6 +26,7 @@ const Projects = () => {
         }}
       >
         <Box>
+          <ProjectsAnimationFile />
           <br />
           <br />
           <br />
@@ -46,11 +47,6 @@ const Projects = () => {
           <br />
           <br />
         </Box>
-        <Grow in={true}>
-          <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <ProjectsAnimationFile />
-          </Card>
-        </Grow>
       </Box>
     </div>
   );

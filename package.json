@@ -6,6 +6,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@lottiefiles/lottie-interactivity": "^1.6.2",
+    "@lottiefiles/lottie-player": "^1.7.1",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@testing-library/jest-dom": "^5.16.5",
