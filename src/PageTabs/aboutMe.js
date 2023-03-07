@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
-import AboutMeAnimationFile from "./aboutMeAnimation";
+import AboutMeAnimationFile from "../Components/aboutMeAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
@@ -12,10 +12,14 @@ const StyledTypography = styled("Typography")({
   color: "aliceblue",
 });
 
+const HeaderText = styled("Typography")({
+  color: "aliceblue",
+});
+
 const AboutMe = () => {
   return (
     <div>
-      <Typography> Hello! My name is Pranav Kalra.</Typography>
+      <HeaderText> Hello! My name is Pranav Kalra.</HeaderText>
       <Typography> I am a frontend developer</Typography>
 
       <Box

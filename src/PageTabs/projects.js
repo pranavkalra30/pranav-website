@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
-import ProjectsAnimationFile from "./projectsAnimation";
+import ProjectsAnimationFile from "../Components/projectsAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
