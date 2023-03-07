@@ -6,14 +6,15 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import Projects from "./PageTabs/projects";
 import Education from "./PageTabs/education";
+import BackToTop from "./Components/backToTop"
 
 function App() {
-  const [appPageValue, setAppPage] = React.useState(2);
+  const [appPageValue, setAppPage] = React.useState(3);
 
   function handlePage(newValue) {
     setAppPage(newValue);
   }
-  let pageDisplayed = <AboutMe />;
+  let pageDisplayed = <Education />;
 
   switch (appPageValue) {
     case 0:
@@ -36,6 +37,7 @@ function App() {
     <div className="App">
       <PrimaryAppBar handlePage={handlePage} appPageValue={appPageValue} />
       <br />
+      <BackToTop />
       <Box
         sx={{
           display: "flex",

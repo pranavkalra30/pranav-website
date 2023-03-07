@@ -1,3 +1,4 @@
+import { Typography, Grow, Card } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 
 import TimelineObserver from "react-timeline-animation";
@@ -18,7 +19,16 @@ const EducationTimeline = ({ setObserver, callback }) => {
   const circle3 = useRef(null);
 
   const someCallback = () => {
-    setMessage1("Step one");
+    setMessage1(<Grow in={true}>
+      <Card
+        sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
+      >
+        <Typography>
+          My main areas of expertise include Javascript, Typescript,
+          Node.js, HTML, CSS, php and Python.
+        </Typography>
+      </Card>
+    </Grow>);
     callback();
   };
 
@@ -47,7 +57,7 @@ const EducationTimeline = ({ setObserver, callback }) => {
         <div id="circle1" ref={circle1} className="circle">
           1
         </div>
-        <div className="message">{message1}</div>
+        <div className="message"><Typography>{message1}</Typography></div>
       </div>
       <div id="timeline2" ref={timeline2} className="timeline" />
       <div className="circleWrapper">
