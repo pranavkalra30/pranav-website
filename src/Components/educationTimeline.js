@@ -23,7 +23,7 @@ const EducationTimeline = ({ setObserver, callback }) => {
       <Card
         sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
       >
-        <Typography>
+        <Typography sx={{  color: "aliceblue"}}>
           My main areas of expertise include Javascript, Typescript,
           Node.js, HTML, CSS, php and Python.
         </Typography>
