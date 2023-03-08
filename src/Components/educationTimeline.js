@@ -1,8 +1,14 @@
 import { Typography, Grow, Card } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-
+import TimelineDot from "@mui/lab/TimelineDot";
+import FastfoodIcon from "@mui/icons-material/Fastfood";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import TimelineObserver from "react-timeline-animation";
+import SchoolIcon from "@mui/icons-material/School";
 import { fireConfetti } from "./confetti";
+import TimelineContent from "@mui/lab/TimelineContent";
+
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 
 import "./styles.css";
 
@@ -19,25 +25,49 @@ const EducationTimeline = ({ setObserver, callback }) => {
   const circle3 = useRef(null);
 
   const someCallback = () => {
-    setMessage1(<Grow in={true}>
-      <Card
-        sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
-      >
-        <Typography sx={{  color: "aliceblue"}}>
-          My main areas of expertise include Javascript, Typescript,
-          Node.js, HTML, CSS, php and Python.
-        </Typography>
-      </Card>
-    </Grow>);
+    setMessage1(
+      <Grow in>
+        <TimelineContent sx={{ py: "12px", px: 2 }}>
+          <Typography variant="h6" component="span">
+            2013
+          </Typography>
+          <Typography>
+            Started Studying Electrical Engineering at Ryerson University
+          </Typography>
+        </TimelineContent>
+      </Grow>
+    );
     callback();
   };
 
   const someCallback2 = () => {
-    setMessage2("Step two");
+    setMessage2(
+      <Grow in>
+        <TimelineContent sx={{ py: "12px", px: 2 }}>
+          <Typography variant="h6" component="span">
+            2017
+          </Typography>
+          <Typography>
+            Graduated with Bachelor's Degree but Realized my passion for coding
+          </Typography>
+        </TimelineContent>
+      </Grow>
+    );
   };
 
   const someCallback3 = () => {
-    setMessage3("Finish");
+    setMessage3(
+      <Grow in>
+        <TimelineContent sx={{ py: "12px", px: 2 }}>
+          <Typography variant="h6" component="span">
+            2018
+          </Typography>
+          <Typography>
+            Started working as a Software Developer at TCS
+          </Typography>
+        </TimelineContent>
+      </Grow>
+    );
     fireConfetti();
   };
 
@@ -55,21 +85,23 @@ const EducationTimeline = ({ setObserver, callback }) => {
       <div id="timeline1" ref={timeline1} className="timeline" />
       <div className="circleWrapper">
         <div id="circle1" ref={circle1} className="circle">
-          1
+          <LocalLibraryIcon />
         </div>
-        <div className="message"><Typography>{message1}</Typography></div>
+        <div className="message">
+          <Typography>{message1}</Typography>
+        </div>
       </div>
       <div id="timeline2" ref={timeline2} className="timeline" />
       <div className="circleWrapper">
         <div id="circle2" ref={circle2} className="circle">
-          2
+          <SchoolIcon />
         </div>
         <div className="message">{message2}</div>
       </div>
       <div id="timeline3" ref={timeline3} className="timeline" />
       <div className="circleWrapper">
         <div id="circle3" ref={circle3} className="circle">
-          3
+          <LaptopMacIcon />
         </div>
         <div className="message">{message3}</div>
       </div>

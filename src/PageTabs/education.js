@@ -1,7 +1,8 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
-import EducationAnimationFile from "../Components/educationAnimation";
+import EducationAnimationFile from "../Animations/EducationAnimation";
+import BooksAnimationFile from "../Animations/BooksAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
@@ -42,6 +43,7 @@ const Education = () => {
           <br />
           <br />
           <br />
+          <BooksAnimationFile />
           <Grow in={true}>
             <Card
               sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
@@ -61,7 +63,6 @@ const Education = () => {
           <br />
           <br />
           <br />
-          <EducationAnimationFile />
         </Box>
         <TimelineObserver
           initialColor="#e5e5e5"
@@ -129,11 +130,6 @@ const Education = () => {
         <br />
         <br />
         <br />
-        <Grow in={true}>
-          <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <EducationAnimationFile />
-          </Card>
-        </Grow>
       </Box>
     </div>
   );

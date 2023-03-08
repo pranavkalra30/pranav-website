@@ -7,7 +7,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
 import { styled } from "@mui/system";
 import ContactMeSpeedDial from "./ContactMeSpeedDial";
-import { Toolbar, Typography } from "@mui/material";
+import { Toolbar, Typography, Box } from "@mui/material";
 
 const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   color: "white",
@@ -19,55 +19,60 @@ class PrimaryAppBar extends React.Component {
 
     return (
       <div>
-        <AppBar sx={{
-            position: "fixed",
-            width: "100%",
-            backdropFilter: "blur(20px)",
-            backgroundColor: "transparent",
-          }}>
-        <Toolbar
-          value={appPageValue}
+        <AppBar
           sx={{
             position: "fixed",
             width: "100%",
             backdropFilter: "blur(20px)",
             backgroundColor: "transparent",
+            margin: "auto",
           }}
-      
-          showLabels
         >
-          <StyledBottomNavigationAction
-            label="Experience"
-            icon={<ScienceIcon />}
-            onChange={(event) => {
-              handlePage(0);
+          <Toolbar
+            value={appPageValue}
+            sx={{
+              position: "fixed",
+              width: "100%",
+              backdropFilter: "blur(20px)",
+              backgroundColor: "transparent",
+              justifyContent: "center",
             }}
+            showLabels
           >
-            <Typography>Experience</Typography>
-            </StyledBottomNavigationAction>
+            <StyledBottomNavigationAction
+              label="Experience"
+              showLabel
+              icon={<ScienceIcon />}
+              onChange={(event) => {
+                handlePage(0);
+              }}
+            ></StyledBottomNavigationAction>
 
-          <StyledBottomNavigationAction
-            label="Projects"
-            icon={<DevicesIcon />}
-            onChange={(event) => {
-              handlePage(1);
-            }}
-          />
-          <StyledBottomNavigationAction
-            label="About Me"
-            icon={<PersonIcon />}
-            onChange={(event) => {
-              handlePage(0);
-            }}
-          />
-          <StyledBottomNavigationAction
-            label="Education"
-            icon={<SchoolIcon />}
-            onChange={(event) => {
-              handlePage(3);
-            }}
-          />
-        </Toolbar>
+            <StyledBottomNavigationAction
+              showLabel
+              label="Projects"
+              icon={<DevicesIcon />}
+              onChange={(event) => {
+                handlePage(1);
+              }}
+            />
+            <StyledBottomNavigationAction
+              showLabel
+              label="About Me"
+              icon={<PersonIcon />}
+              onChange={(event) => {
+                handlePage(0);
+              }}
+            />
+            <StyledBottomNavigationAction
+              showLabel
+              label="Education"
+              icon={<SchoolIcon />}
+              onChange={(event) => {
+                handlePage(3);
+              }}
+            />
+          </Toolbar>
         </AppBar>
       </div>
     );
