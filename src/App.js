@@ -8,6 +8,15 @@ import Projects from "./PageTabs/projects";
 import Education from "./PageTabs/education";
 import BackToTop from "./Components/backToTop";
 import TypeAnimation from "./Animations/TypeAnimation";
+import { styled } from "@mui/system";
+
+const TabHeader = styled("Typography")({
+  color: "aliceblue",
+  fontSize: "62px",
+  textAlign: "center",
+  paddingLeft: "250px",
+  paddingTop: '80px'
+});
 
 function App() {
   const [appPageValue, setAppPage] = React.useState(3);
@@ -15,28 +24,28 @@ function App() {
   function handlePage(newValue) {
     setAppPage(newValue);
   }
-  let pageDisplayed = <Education />;
+  let pageDisplayed = <Education alt="loading..." loading="lazy" />;
   let typeAnimationText = "";
 
   switch (appPageValue) {
     case 0:
-      pageDisplayed = <AboutMe />;
-      typeAnimationText = "About Me.";
+      pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
+      typeAnimationText = "About Me";
       break;
 
     case 1:
-      pageDisplayed = <Projects />;
-      typeAnimationText = "Projects.";
+      pageDisplayed = <Projects alt="loading..." loading="lazy"  />;
+      typeAnimationText = "Projects";
       break;
 
     case 2:
-      pageDisplayed = <AboutMe />;
-      typeAnimationText = "About Me.";
+      pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
+      typeAnimationText = "About Me";
       break;
 
     case 3:
-      pageDisplayed = <Education />;
-      typeAnimationText = "Education.";
+      pageDisplayed = <Education alt="loading..." loading="lazy" />;
+      typeAnimationText = "Education";
       break;
   }
   return (
@@ -52,7 +61,7 @@ function App() {
         }}
       >
         <img src={P} alt="loading..." loading="lazy" width={250} height={250} />
-        {typeAnimationText}
+        <TabHeader>{typeAnimationText}</TabHeader>
       </Box>
       {pageDisplayed}
     </div>

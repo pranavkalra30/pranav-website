@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
+import MediaCard from "../Components/projectCard"
 import { styled } from "@mui/system";
 
 const StyledTypography = styled("Typography")({
@@ -39,6 +40,7 @@ const Projects = () => {
             >
               <StyledTypography>Projects - The Movie Search</StyledTypography>
             </Card>
+            <MediaCard />
           </Grow>
           <br />
           <br />
