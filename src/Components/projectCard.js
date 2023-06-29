@@ -16,11 +16,10 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          Movie Search Website
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        Designed and created the entire website including all flows from scratch. Used Redux-Saga to retrieve and process movie information and details
         </Typography>
       </CardContent>
       <CardActions>
