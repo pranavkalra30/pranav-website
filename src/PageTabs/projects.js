@@ -7,11 +7,7 @@ import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
 import MediaCard from "../Components/projectCard"
-import { styled } from "@mui/system";
 
-const StyledTypography = styled("Typography")({
-  color: "aliceblue",
-});
 
 const Projects = () => {
   return (
@@ -34,14 +30,14 @@ const Projects = () => {
           <br />
           <br />
           <br />
-          <Grow in={true}>
+          
             <Card
               sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
             >
-              <StyledTypography>Projects - The Movie Search</StyledTypography>
+              <Typography>Projects - The Movie Search</Typography>
             </Card>
             <MediaCard />
-          </Grow>
+
           <br />
           <br />
           <br />

@@ -19,12 +19,12 @@ const TabHeader = styled("Typography")({
 });
 
 function App() {
-  const [appPageValue, setAppPage] = React.useState(3);
+  const [appPageValue, setAppPage] = React.useState(0);
 
   function handlePage(newValue) {
     setAppPage(newValue);
   }
-  let pageDisplayed = <Education alt="loading..." loading="lazy" />;
+  let pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
   let typeAnimationText = "";
 
   switch (appPageValue) {
