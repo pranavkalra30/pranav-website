@@ -25,7 +25,7 @@ export default function MediaCard() {
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={()=> window.open("https://64caaf26cdb7c913692b6c68--endearing-bavarois-c380b6.netlify.app", "_blank")}>Learn More</Button>
       </CardActions>
     </Card>
   );
