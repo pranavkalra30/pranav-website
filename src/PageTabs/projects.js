@@ -5,6 +5,8 @@ import ProjectsAnimationFile from "../Components/projectsAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
+import Slide from '@mui/material/Slide';
+
 import Card from "@mui/material/Card";
 import MediaCard from "../Components/projectCard"
 import { styled } from "@mui/system";
@@ -21,6 +23,7 @@ const TabHeader = styled("Typography")({
 const Projects = () => {
   return (
     <div>
+       <Grow in={true}>
  <Box
         sx={{
           display: "flex",
@@ -30,8 +33,11 @@ const Projects = () => {
       >
        
         <TabHeader>Projects</TabHeader>
+       
         <ProjectsAnimationFile />
+  
       </Box>
+      </Grow>
       <Box
         style={{
           display: "flex",
@@ -39,12 +45,13 @@ const Projects = () => {
           justifyContent: "space-evenly",
         }}
       >
-       
+            <Slide direction="up" in={true}  >
         <Box>
           
           <br />
-         
+     
             <MediaCard />
+ 
 
           <br />
           <br />
@@ -53,6 +60,7 @@ const Projects = () => {
           <br />
           <br />
         </Box>
+        </Slide>
       </Box>
     </div>
   );

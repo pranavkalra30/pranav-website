@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
-import UnderConstructionAnimationFile from "../Animations/underConstruction";
+import UnderConstructionAnimationFile from "../Components/underConstruction";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
@@ -19,7 +19,7 @@ const HeaderText = styled("Typography")({
 const UnderConstruction = () => {
   return (
     <div>
-      <HeaderText> Sorry, This page is still under construction</HeaderText>
+      <HeaderText> Sorry, This Page is still Under Construction</HeaderText>
       <Box
         sx={{
           display: "flex",

@@ -1,6 +1,6 @@
 import React from "react";
 import lottie from "lottie-web";
-import underConstruction from "./underConstruction.json";
+import underConstruction from "../Animations/underConstruction.json";
 
 function UnderConstructionAnimationFile() {
   React.useEffect(() => {

@@ -1,16 +1,12 @@
 import "./App.css";
 import AboutMe from "./PageTabs/aboutMe.js";
 import PrimaryAppBar from "./Components/appbar.js";
-import P from "./Animations/P.gif";
 import React from "react";
-import { Typography, Box } from "@mui/material";
 import Projects from "./PageTabs/projects";
 import Education from "./PageTabs/education";
 import UnderConstruction from "./PageTabs/underConstruction";
 import BackToTop from "./Components/backToTop";
-import TypeAnimation from "./Animations/TypeAnimation";
 import { styled } from "@mui/system";
-import ProjectsAnimationFile from "./Components/projectsAnimation";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",

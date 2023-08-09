@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import TheMovieSearchScreen from "../Animations/TheMovieSearch.png"
+import TheMovieSearchScreen from "../Images/TheMovieSearch.png"
 import { styled } from "@mui/system";
 
 

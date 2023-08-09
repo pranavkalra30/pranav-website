@@ -6,10 +6,9 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
 import { styled } from "@mui/system";
-import ContactMeSpeedDial from "./ContactMeSpeedDial";
-import { Toolbar, Typography, Box } from "@mui/material";
+import { Toolbar } from "@mui/material";
 //import P from "../Animations/P.gif";
-import P from "../Animations/Icon.png";
+import P from "../Images/Icon.png";
 
 
 const StyledBottomNavigationAction = styled(BottomNavigationAction)({
