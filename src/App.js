@@ -6,6 +6,7 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import Projects from "./PageTabs/projects";
 import Education from "./PageTabs/education";
+import UnderConstruction from "./PageTabs/underConstruction";
 import BackToTop from "./Components/backToTop";
 import TypeAnimation from "./Animations/TypeAnimation";
 import { styled } from "@mui/system";
@@ -20,33 +21,28 @@ const TabHeader = styled("Typography")({
 });
 
 function App() {
-  const [appPageValue, setAppPage] = React.useState(0);
+  const [appPageValue, setAppPage] = React.useState(1);
 
   function handlePage(newValue) {
     setAppPage(newValue);
   }
   let pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
-  let typeAnimationText = "";
 
   switch (appPageValue) {
     case 0:
-      pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
-      typeAnimationText = "About Me";
+      pageDisplayed = <UnderConstruction alt="loading..." loading="lazy" />;
       break;
 
     case 1:
       pageDisplayed = <Projects alt="loading..." loading="lazy"  />;
-      typeAnimationText = "Projects";
       break;
 
     case 2:
       pageDisplayed = <AboutMe alt="loading..." loading="lazy" />;
-      typeAnimationText = "About Me";
       break;
 
     case 3:
       pageDisplayed = <Education alt="loading..." loading="lazy" />;
-      typeAnimationText = "Education";
       break;
   }
   return (
@@ -54,18 +50,9 @@ function App() {
       <PrimaryAppBar handlePage={handlePage} appPageValue={appPageValue} />
      
       <br />
+      <br />
       <BackToTop />
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-start",
-          marginLeft: "30px",
-        }}
-      >
-       
-        <TabHeader>{typeAnimationText}</TabHeader>
-        <ProjectsAnimationFile />
-      </Box>
+     
       
       {pageDisplayed}
     </div>

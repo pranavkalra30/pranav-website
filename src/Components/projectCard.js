@@ -18,7 +18,7 @@ const StyledCard = styled("Card")({
 
 export default function MediaCard() {
   return (
-    <Card onClick={()=> window.open("https://64caaf26cdb7c913692b6c68--endearing-bavarois-c380b6.netlify.app", "_blank")} sx={{backgroundColor: "#53565c", borderRadius: '30px' }}>
+    <Card onClick={()=> window.open("https://64caaf26cdb7c913692b6c68--endearing-bavarois-c380b6.netlify.app", "_blank")} sx={{backgroundColor: "#53565c", borderRadius: '30px' ,  cursor: "pointer"}}>
   
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" color='white'>
@@ -30,7 +30,7 @@ export default function MediaCard() {
         <CardMedia
         sx={{ height: 240 }}
         image={TheMovieSearchScreen}
-        title="green iguana"
+        title="Movies"
       />
       </CardContent>
       <CardActions>

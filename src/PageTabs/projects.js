@@ -21,7 +21,17 @@ const TabHeader = styled("Typography")({
 const Projects = () => {
   return (
     <div>
-
+ <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-start",
+          marginLeft: "30px",
+        }}
+      >
+       
+        <TabHeader>Projects</TabHeader>
+        <ProjectsAnimationFile />
+      </Box>
       <Box
         style={{
           display: "flex",

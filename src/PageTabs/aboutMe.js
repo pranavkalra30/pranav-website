@@ -59,6 +59,9 @@ const AboutMe = () => {
           </Card>
         </Grow>
       </Box>
+      <br />
+        <br />
+   
     </div>
   );
 };

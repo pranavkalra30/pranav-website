@@ -43,14 +43,7 @@ class PrimaryAppBar extends React.Component {
             showLabels
           >
              <img src={P} alt="loading..." loading="lazy" width={100} />
-            <StyledBottomNavigationAction
-              label="Experience"
-              showLabel
-              icon={<ScienceIcon />}
-              onChange={(event) => {
-                handlePage(0);
-              }}
-            ></StyledBottomNavigationAction>
+          
 
             <StyledBottomNavigationAction
               showLabel
@@ -65,7 +58,7 @@ class PrimaryAppBar extends React.Component {
               label="About Me"
               icon={<PersonIcon />}
               onChange={(event) => {
-                handlePage(0);
+                handlePage(2);
               }}
             />
             <StyledBottomNavigationAction
@@ -76,6 +69,14 @@ class PrimaryAppBar extends React.Component {
                 handlePage(3);
               }}
             />
+              <StyledBottomNavigationAction
+              label="Experience"
+              showLabel
+              icon={<ScienceIcon />}
+              onChange={(event) => {
+                handlePage(0);
+              }}
+            ></StyledBottomNavigationAction>
           </Toolbar>
         </AppBar>
       </div>
