@@ -25,8 +25,6 @@ class PrimaryAppBar extends React.Component {
           sx={{
             position: "fixed",
             width: "100%",
-            backdropFilter: "blur(20px)",
-            backgroundColor: "transparent",
             margin: "auto",
           }}
         >
