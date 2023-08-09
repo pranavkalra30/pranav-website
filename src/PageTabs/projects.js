@@ -7,13 +7,20 @@ import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
 import MediaCard from "../Components/projectCard"
+import { styled } from "@mui/system";
 
+
+const TabHeader = styled("Typography")({
+  color: "aliceblue",
+  fontSize: "62px",
+  textAlign: "center",
+  paddingLeft: "250px",
+  paddingTop: '80px'
+});
 
 const Projects = () => {
   return (
     <div>
-      <Typography> I love making projects.</Typography>
-      <Typography> Some of the ones I worked on are: </Typography>
 
       <Box
         style={{
@@ -22,20 +29,11 @@ const Projects = () => {
           justifyContent: "space-evenly",
         }}
       >
+       
         <Box>
-          <ProjectsAnimationFile />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           
-            <Card
-              sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
-            >
-              <Typography>Projects - The Movie Search</Typography>
-            </Card>
+          <br />
+         
             <MediaCard />
 
           <br />

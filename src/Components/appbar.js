@@ -8,6 +8,9 @@ import ScienceIcon from "@mui/icons-material/Science";
 import { styled } from "@mui/system";
 import ContactMeSpeedDial from "./ContactMeSpeedDial";
 import { Toolbar, Typography, Box } from "@mui/material";
+//import P from "../Animations/P.gif";
+import P from "../Animations/Icon.png";
+
 
 const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   color: "white",
@@ -39,6 +42,7 @@ class PrimaryAppBar extends React.Component {
             }}
             showLabels
           >
+             <img src={P} alt="loading..." loading="lazy" width={100} />
             <StyledBottomNavigationAction
               label="Experience"
               showLabel

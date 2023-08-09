@@ -1,6 +1,7 @@
 import React from "react";
 import "@lottiefiles/lottie-player";
 import { create } from "@lottiefiles/lottie-interactivity";
+import projectsAnimationLottie from '../Animations/projectsAnimation2.json'
 
 class ProjectsAnimationFile extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ProjectsAnimationFile extends React.Component {
           ref={this.myRef} // 2. set the reference for the player
           id="projectsLottie"
           mode="normal"
-          src="https://assets3.lottiefiles.com/packages/lf20_xxyvtiab.json"
+          src="https://lottie.host/6f77ee57-0e40-4fa7-a41d-77bba5c6cd37/g0Q1KivvQ2.json"
           style={{ width: "420px" }}
         ></lottie-player>
       </div>

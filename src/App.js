@@ -9,6 +9,7 @@ import Education from "./PageTabs/education";
 import BackToTop from "./Components/backToTop";
 import TypeAnimation from "./Animations/TypeAnimation";
 import { styled } from "@mui/system";
+import ProjectsAnimationFile from "./Components/projectsAnimation";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -51,6 +52,7 @@ function App() {
   return (
     <div className="App">
       <PrimaryAppBar handlePage={handlePage} appPageValue={appPageValue} />
+     
       <br />
       <BackToTop />
       <Box
@@ -60,9 +62,11 @@ function App() {
           marginLeft: "30px",
         }}
       >
-        <img src={P} alt="loading..." loading="lazy" width={250} height={250} />
+       
         <TabHeader>{typeAnimationText}</TabHeader>
+        <ProjectsAnimationFile />
       </Box>
+      
       {pageDisplayed}
     </div>
   );
