@@ -13,11 +13,11 @@ import TimelineObserver from "react-timeline-animation";
 import EducationTimeline from "../Components/educationTimeline";
 
 const StyledTypography = styled("Typography")({
-  color: "aliceblue",
+ // color: "aliceblue",
 });
 
 const HeaderText = styled("Typography")({
-  color: "aliceblue",
+ // color: "aliceblue",
 });
 
 const onCallback = () => {
@@ -44,7 +44,7 @@ const Education = () => {
           <br />
           <br />
           <BooksAnimationFile />
-          <Grow in={true}>
+         {/*  <Grow in={true}>
             <Card
               sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
             >
@@ -53,7 +53,7 @@ const Education = () => {
                 Node.js, HTML, CSS, php and Python.
               </StyledTypography>
             </Card>
-          </Grow>
+          </Grow> */}
           <br />
           <br />
           <br />

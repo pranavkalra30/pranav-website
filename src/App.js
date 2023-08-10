@@ -7,6 +7,8 @@ import Education from "./PageTabs/education";
 import UnderConstruction from "./PageTabs/underConstruction";
 import BackToTop from "./Components/backToTop";
 import { styled } from "@mui/system";
+import { Suspense, lazy } from "react";
+
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -15,6 +17,9 @@ const TabHeader = styled("Typography")({
   paddingLeft: "250px",
   paddingTop: '80px'
 });
+
+const FooterPage = lazy(() => import("./Components/footer"));
+
 
 function App() {
   const [appPageValue, setAppPage] = React.useState(1);
@@ -51,6 +56,13 @@ function App() {
      
       
       {pageDisplayed}
+
+      <Suspense fallback={<div />}>
+            <FooterPage
+             // width={this.state.width}
+            
+            />
+          </Suspense>
     </div>
   );
 }

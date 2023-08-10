@@ -1,15 +1,12 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import { TypeAnimation } from "react-type-animation";
 import ProjectsAnimationFile from "../Components/projectsAnimation";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Slide from '@mui/material/Slide';
-
-import Card from "@mui/material/Card";
-import MediaCard from "../Components/projectCard"
+import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
+
+const MediaCard = lazy(() => import("../Components/projectCard"));
 
 
 const TabHeader = styled("Typography")({
@@ -49,8 +46,9 @@ const Projects = () => {
         <Box>
           
           <br />
-     
+          <Suspense fallback={<div />}>
             <MediaCard />
+            </Suspense>
  
 
           <br />
@@ -61,6 +59,7 @@ const Projects = () => {
           <br />
         </Box>
         </Slide>
+        
       </Box>
     </div>
   );

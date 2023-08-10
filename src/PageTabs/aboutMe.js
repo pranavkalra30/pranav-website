@@ -5,6 +5,7 @@ import AboutMeAnimationFile from "../Components/aboutMeAnimation";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
+import Slide from "@mui/material/Slide";
 import Card from "@mui/material/Card";
 import { styled } from "@mui/system";
 
@@ -19,9 +20,17 @@ const HeaderText = styled("Typography")({
 const AboutMe = () => {
   return (
     <div>
-      <HeaderText> Hello! My name is Pranav Kalra.</HeaderText>
-      <Typography> I am a frontend developer</Typography>
-
+         <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Hello! My name is Pranav Kalra.'
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '2em', display: 'inline-block' }}
+      
+    />
+   
       <Box
         style={{
           display: "flex",
@@ -36,16 +45,16 @@ const AboutMe = () => {
           <br />
           <br />
           <br />
-          <Grow in={true}>
+          <Slide direction="up" in={true}  >
             <Card
-              sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d" }}
+              sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d", borderRadius: '20px' }}
             >
               <StyledTypography>
                 My main areas of expertise include Javascript, Typescript,
                 Node.js, HTML, CSS, php and Python.
               </StyledTypography>
             </Card>
-          </Grow>
+          </Slide>
           <br />
           <br />
           <br />
