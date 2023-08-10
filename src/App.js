@@ -22,7 +22,7 @@ const FooterPage = lazy(() => import("./Components/footer"));
 
 
 function App() {
-  const [appPageValue, setAppPage] = React.useState(1);
+  const [appPageValue, setAppPage] = React.useState(2);
 
   function handlePage(newValue) {
     setAppPage(newValue);

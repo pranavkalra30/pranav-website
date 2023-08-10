@@ -6,7 +6,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
 import { styled } from "@mui/system";
-import { Toolbar } from "@mui/material";
+import { Toolbar, Typography } from "@mui/material";
 //import P from "../Animations/P.gif";
 import P from "../Images/Icon.png";
 
@@ -18,7 +18,6 @@ const StyledBottomNavigationAction = styled(BottomNavigationAction)({
 class PrimaryAppBar extends React.Component {
   render() {
     const { handlePage, appPageValue } = this.props;
-
     return (
       <div>
         <AppBar
@@ -44,32 +43,32 @@ class PrimaryAppBar extends React.Component {
 
             <StyledBottomNavigationAction
               showLabel
-              label="Projects"
-              icon={<DevicesIcon />}
+              label={<Typography sx={{color: appPageValue===1?'#898da3': 'white', fontSize: appPageValue===1?'16px': '13px'}}> Projects</Typography>}
+              icon={<DevicesIcon sx={{color: appPageValue===1?'#898da3': 'white',  fontSize: appPageValue===1?'3em': '2.5em'}}/>}
               onChange={(event) => {
                 handlePage(1);
               }}
             />
             <StyledBottomNavigationAction
               showLabel
-              label="About Me"
-              icon={<PersonIcon />}
+              label={<Typography sx={{color: appPageValue===2?'#898da3': 'white', fontSize: appPageValue===2?'16px': '13px'}}> About Me</Typography>}
+              icon={<PersonIcon sx={{color: appPageValue===2?'#898da3': 'white', fontSize: appPageValue===2?'3em': '2.5em' }}/>}
               onChange={(event) => {
                 handlePage(2);
               }}
             />
             <StyledBottomNavigationAction
               showLabel
-              label="Education"
-              icon={<SchoolIcon />}
+              label={<Typography sx={{color: appPageValue===3?'#898da3': 'white', fontSize: appPageValue===3?'16px': '13px'}}> Education</Typography>}
+              icon={<SchoolIcon sx={{color: appPageValue===3?'#898da3': 'white',  fontSize: appPageValue===3?'3em': '2.5em'}}/>}
               onChange={(event) => {
                 handlePage(3);
               }}
             />
               <StyledBottomNavigationAction
-              label="Experience"
+              label={<Typography sx={{color: appPageValue===0?'#898da3': 'white', fontSize: appPageValue===0?'16px': '13px'}}> Experience</Typography>}
               showLabel
-              icon={<ScienceIcon />}
+              icon={<ScienceIcon sx={{color: appPageValue===0?'#898da3': 'white',  fontSize: appPageValue===0?'3em': '2.5em'}}/>}
               onChange={(event) => {
                 handlePage(0);
               }}
