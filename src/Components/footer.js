@@ -95,7 +95,7 @@ class FooterPage extends React.Component {
                     //  className={classes.textTwitter}
                       href="https://www.linkedin.com/in/pranav00100/"
                     >
-                       <LinkedInIcon sx={{fontSize:'1.5em', color: 'white'}} />
+                       <LinkedInIcon sx={{fontSize:'1.5em', color: '#9e9e9e'}} />
                     </a>
 
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -103,7 +103,7 @@ class FooterPage extends React.Component {
                     //  className={classes.textTwitter}
                       href="https://github.com/pranavkalra30?tab=projects"
                     >
-                         <GitHubIcon sx={{fontSize:'1.5em', color: 'white'}} />
+                         <GitHubIcon sx={{fontSize:'1.5em', color: '#9e9e9e'}} />
                     </a>
           
                 </h5>
