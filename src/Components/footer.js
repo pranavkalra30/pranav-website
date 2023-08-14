@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import PropTypes from "prop-types";
 import Button from '@mui/material/Button';
@@ -95,7 +95,15 @@ class FooterPage extends React.Component {
                     //  className={classes.textTwitter}
                       href="https://www.linkedin.com/in/pranav00100/"
                     >
-                       Linkedin
+                       <LinkedInIcon sx={{fontSize:'1.5em', color: 'white'}} />
+                    </a>
+
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <a
+                    //  className={classes.textTwitter}
+                      href="https://github.com/pranavkalra30?tab=projects"
+                    >
+                         <GitHubIcon sx={{fontSize:'1.5em', color: 'white'}} />
                     </a>
           
                 </h5>
