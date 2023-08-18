@@ -62,11 +62,13 @@ const AboutMe = () => {
           <br />
           <br />
         </Box>
+        <Box>
         <Grow in={true}>
           <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
             <AboutMeAnimationFile />
           </Card>
         </Grow>
+        </Box>
       </Box>
       <br />
         <br />

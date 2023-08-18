@@ -12,7 +12,7 @@ function AboutMeAnimationFile() {
 
   return (
     <div>
-      <div id="react-logo" style={{ width: 500, height: 500 }} />
+      <div id="react-logo" style={{ width: window.innerWidth/3, height: window.innerWidth/3} } />
     </div>
   );
 }
