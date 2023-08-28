@@ -1,11 +1,7 @@
-import { Typography, Grow, Card } from "@mui/material";
+import { Typography, Grow } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import TimelineObserver from "react-timeline-animation";
 import SchoolIcon from "@mui/icons-material/School";
-import { fireConfetti } from "./confetti";
 import TimelineContent from "@mui/lab/TimelineContent";
 
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
@@ -68,7 +64,6 @@ const EducationTimeline = ({ setObserver, callback }) => {
         </TimelineContent>
       </Grow>
     );
-    fireConfetti();
   };
 
   useEffect(() => {
