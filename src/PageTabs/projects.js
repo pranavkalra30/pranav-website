@@ -2,38 +2,35 @@ import React from "react";
 import ProjectsAnimationFile from "../Components/projectsAnimation";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
-import Slide from '@mui/material/Slide';
+import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
 
 const MediaCard = lazy(() => import("../Components/projectCard"));
 
-
 const TabHeader = styled("Typography")({
   color: "aliceblue",
-  fontSize: "62px",
+  fontSize: "80px",
   textAlign: "center",
   paddingLeft: "250px",
-  paddingTop: '80px'
+  paddingTop: "10px",
 });
 
 const Projects = () => {
   return (
     <div>
-       <Grow in={true}>
- <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-start",
-          marginLeft: "30px",
-        }}
-      >
-       
-        <TabHeader>Projects</TabHeader>
-       
-        <ProjectsAnimationFile />
-  
-      </Box>
+      <Grow in={true}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            marginLeft: "30px",
+          }}
+        >
+          <TabHeader>Projects</TabHeader>
+
+          <ProjectsAnimationFile />
+        </Box>
       </Grow>
       <Box
         style={{
@@ -42,24 +39,22 @@ const Projects = () => {
           justifyContent: "space-evenly",
         }}
       >
-            <Slide direction="up" in={true}  >
-        <Box>
-          
-          <br />
-          <Suspense fallback={<div />}>
-            <MediaCard />
+        <Slide direction="up" in={true}>
+          <Box>
+            <br />
+            <Suspense fallback={<div />}>
+              <MediaCard />
             </Suspense>
- 
+            <br />
+            <br />
+            <Suspense fallback={<div />}>
+              <MediaCard />
+            </Suspense>
 
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </Box>
+            <br />
+            <br />
+          </Box>
         </Slide>
-        
       </Box>
     </div>
   );

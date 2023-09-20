@@ -20,17 +20,16 @@ const HeaderText = styled("Typography")({
 const AboutMe = () => {
   return (
     <div>
-         <TypeAnimation
-      sequence={[
-        // Same substring at the start will only be typed out once, initially
-        'Hello! My name is Pranav Kalra.'
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '2em', display: 'inline-block' }}
-      
-    />
-   
+      <TypeAnimation
+        sequence={[
+          // Same substring at the start will only be typed out once, initially
+          "Hello! My name is Pranav Kalra.",
+        ]}
+        wrapper="span"
+        speed={50}
+        style={{ fontSize: "2em", display: "inline-block" }}
+      />
+
       <Box
         style={{
           display: "flex",
@@ -45,9 +44,14 @@ const AboutMe = () => {
           <br />
           <br />
           <br />
-          <Slide direction="up" in={true}  >
+          <Slide direction="up" in={true}>
             <Card
-              sx={{ minWidth: 275, maxWidth: 400, backgroundColor: "#09315d", borderRadius: '20px' }}
+              sx={{
+                minWidth: 275,
+                maxWidth: 400,
+                backgroundColor: "#09315d",
+                borderRadius: "20px",
+              }}
             >
               <StyledTypography>
                 My main areas of expertise include Javascript, Typescript,
@@ -63,16 +67,13 @@ const AboutMe = () => {
           <br />
         </Box>
         <Box>
-        <Grow in={true}>
-          <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <AboutMeAnimationFile />
-          </Card>
-        </Grow>
+          <Grow in={true}>
+            <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
+              <AboutMeAnimationFile />
+            </Card>
+          </Grow>
         </Box>
       </Box>
-      <br />
-        <br />
-   
     </div>
   );
 };
