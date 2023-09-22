@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import TheMovieSearchScreen from "../Images/TheMovieSearch.png";
+import Xpressphone from "../Images/Xpressphone.png";
 import { styled } from "@mui/system";
 
 const StyledCard = styled("Card")({
@@ -30,16 +30,16 @@ export default function MediaCard() {
     >
       <CardMedia
         sx={{ height: 240, borderRadius: "30px, 30px, 0px, 0px" }}
-        image={TheMovieSearchScreen}
+        image={Xpressphone}
         title="Movies"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" color="white">
-          ModoMubi
+          Xpressphone
         </Typography>
         <Typography variant="body2" color="white">
-          Designed and developed the entire website, including all user flows,
-          from scratch
+          Played a key role in the ground-up redesign of several website
+          sections.
         </Typography>
       </CardContent>
       <CardActions>
@@ -52,7 +52,7 @@ export default function MediaCard() {
             )
           }
         >
-          Take a look
+          More info
         </Button>
       </CardActions>
     </Card>

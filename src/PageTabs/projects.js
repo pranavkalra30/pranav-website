@@ -7,13 +7,15 @@ import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
 
 const MediaCard = lazy(() => import("../Components/projectCard"));
+const XpressphoneCard = lazy(() =>
+  import("../Components/projectCardXpressphone")
+);
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
   fontSize: "80px",
   textAlign: "center",
-  paddingLeft: "250px",
-  paddingTop: "10px",
+  paddingLeft: "80px",
 });
 
 const Projects = () => {
@@ -29,7 +31,7 @@ const Projects = () => {
         >
           <TabHeader>Projects</TabHeader>
 
-          <ProjectsAnimationFile />
+          {/* <ProjectsAnimationFile /> */}
         </Box>
       </Grow>
       <Box
@@ -41,18 +43,17 @@ const Projects = () => {
       >
         <Slide direction="up" in={true}>
           <Box>
-            <br />
             <Suspense fallback={<div />}>
               <MediaCard />
             </Suspense>
-            <br />
-            <br />
-            <Suspense fallback={<div />}>
-              <MediaCard />
-            </Suspense>
+          </Box>
+        </Slide>
 
-            <br />
-            <br />
+        <Slide direction="up" in={true}>
+          <Box>
+            <Suspense fallback={<div />}>
+              <XpressphoneCard />
+            </Suspense>
           </Box>
         </Slide>
       </Box>
