@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Xpressphone from "../Images/Xpressphone.png";
 import { styled } from "@mui/system";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 
 const StyledCard = styled("Card")({
   width: "275px",
@@ -14,14 +15,10 @@ const StyledCard = styled("Card")({
 });
 
 export default function MediaCard() {
+  const navigate = useNavigate();
   return (
     <Card
-      onClick={() =>
-        window.open(
-          "https://frontend--endearing-bavarois-c380b6.netlify.app",
-          "_blank"
-        )
-      }
+      onClick={() => navigate("/Projects/Xpressphone")}
       sx={{
         backgroundColor: "#53565c",
         borderRadius: "30px",
@@ -42,19 +39,7 @@ export default function MediaCard() {
           sections.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
-          size="small"
-          onClick={() =>
-            window.open(
-              "https://frontend--endearing-bavarois-c380b6.netlify.app",
-              "_blank"
-            )
-          }
-        >
-          More info
-        </Button>
-      </CardActions>
+      <CardActions></CardActions>
     </Card>
   );
 }

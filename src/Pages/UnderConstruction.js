@@ -31,13 +31,11 @@ const UnderConstruction = () => {
             <UnderConstructionAnimationFile />
           </Card>
         </Grow>
-        </Box>
-        <br />
-        <br />
-        <br />
-        <br />
-       
-      
+      </Box>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

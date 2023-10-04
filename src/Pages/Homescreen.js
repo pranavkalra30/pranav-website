@@ -4,6 +4,7 @@ import React from "react";
 import Projects from "../PageTabs/projects";
 import Education from "../PageTabs/education";
 import { styled } from "@mui/system";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -12,6 +13,13 @@ const TabHeader = styled("Typography")({
   paddingLeft: "250px",
   paddingTop: "80px",
 });
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
 
 function Homescreen() {
   return (

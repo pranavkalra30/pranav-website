@@ -9,75 +9,142 @@ import { styled } from "@mui/system";
 import { Toolbar, Typography } from "@mui/material";
 //import P from "../Animations/P.gif";
 import P from "../Images/Icon.png";
-
+import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   color: "white",
 });
 
-class PrimaryAppBar extends React.Component {
-  render() {
-    const { handlePage, appPageValue } = this.props;
-    return (
-      <div>
-        <AppBar
+export default function PrimaryAppBar() {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <AppBar
+        sx={{
+          position: "fixed",
+          width: "100%",
+          margin: "auto",
+        }}
+      >
+        <Toolbar
+          //value={appPageValue}
           sx={{
             position: "fixed",
             width: "100%",
-            margin: "auto",
+            backdropFilter: "blur(20px)",
+            backgroundColor: "transparent",
+            justifyContent: "center",
           }}
+          showLabels
         >
-          <Toolbar
-            value={appPageValue}
-            sx={{
-              position: "fixed",
-              width: "100%",
-              backdropFilter: "blur(20px)",
-              backgroundColor: "transparent",
-              justifyContent: "center",
+          <Button onClick={() => navigate("/")}>
+            {" "}
+            <img src={P} alt="loading..." loading="lazy" width={100} />
+          </Button>
+
+          <StyledBottomNavigationAction
+            showLabel
+            label={
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "16px",
+                }}
+              >
+                {" "}
+                Projects
+              </Typography>
+            }
+            icon={
+              <DevicesIcon
+                sx={{
+                  color: "white",
+                  fontSize: "2.5em",
+                }}
+              />
+            }
+            onChange={(event) => {
+              // handlePage(1);
             }}
-            showLabels
-          >
-             <img src={P} alt="loading..." loading="lazy" width={100} />
-          
-
-            <StyledBottomNavigationAction
-              showLabel
-              label={<Typography sx={{color: appPageValue===1?'white': 'white', fontSize: appPageValue===1?'16px': '16px'}}> Projects</Typography>}
-              icon={<DevicesIcon sx={{color: appPageValue===1?'white': 'white',  fontSize: appPageValue===1?'2.5em': '2.5em'}}/>}
-              onChange={(event) => {
-                handlePage(1);
-              }}
-            />
-            <StyledBottomNavigationAction
-              showLabel
-              label={<Typography sx={{color: appPageValue===2?'white': 'white', fontSize: appPageValue===2?'16px': '16px'}}> About Me</Typography>}
-              icon={<PersonIcon sx={{color: appPageValue===2?'white': 'white', fontSize: appPageValue===2?'2.5em': '2.5em' }}/>}
-              onChange={(event) => {
-                handlePage(2);
-              }}
-            />
-            <StyledBottomNavigationAction
-              showLabel
-              label={<Typography sx={{color: appPageValue===3?'white': 'white', fontSize: appPageValue===3?'16px': '16px'}}> Education</Typography>}
-              icon={<SchoolIcon sx={{color: appPageValue===3?'white': 'white',  fontSize: appPageValue===3?'2.5em': '2.5em'}}/>}
-              onChange={(event) => {
-                handlePage(3);
-              }}
-            />
-              <StyledBottomNavigationAction
-              label={<Typography sx={{color: appPageValue===0?'white': 'white', fontSize: appPageValue===0?'16px': '16px'}}> Experience</Typography>}
-              showLabel
-              icon={<ScienceIcon sx={{color: appPageValue===0?'white': 'white',  fontSize: appPageValue===0?'2.5em': '2.5em'}}/>}
-              onChange={(event) => {
-                handlePage(0);
-              }}
-            ></StyledBottomNavigationAction>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
+          />
+          <StyledBottomNavigationAction
+            showLabel
+            label={
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "16px",
+                }}
+              >
+                {" "}
+                About Me
+              </Typography>
+            }
+            icon={
+              <PersonIcon
+                sx={{
+                  color: "white",
+                  fontSize: "2.5em",
+                }}
+              />
+            }
+            onChange={(event) => {
+              // handlePage(2);
+            }}
+          />
+          <StyledBottomNavigationAction
+            showLabel
+            label={
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "16px",
+                }}
+              >
+                {" "}
+                Education
+              </Typography>
+            }
+            icon={
+              <SchoolIcon
+                sx={{
+                  color: "white",
+                  fontSize: "2.5em",
+                }}
+              />
+            }
+            onChange={(event) => {
+              // handlePage(3);
+            }}
+          />
+          <StyledBottomNavigationAction
+            label={
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "16px",
+                }}
+              >
+                {" "}
+                Experience
+              </Typography>
+            }
+            showLabel
+            icon={
+              <ScienceIcon
+                sx={{
+                  color: "white",
+                  fontSize: "2.5em",
+                }}
+              />
+            }
+            onChange={(event) => {
+              // handlePage(0);
+            }}
+          ></StyledBottomNavigationAction>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default PrimaryAppBar;
