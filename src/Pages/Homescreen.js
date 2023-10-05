@@ -1,10 +1,9 @@
 import "../App.css";
 import AboutMe from "../PageTabs/aboutMe.js";
-import React from "react";
+import React, { useEffect } from "react";
 import Projects from "../PageTabs/projects";
 import Education from "../PageTabs/education";
 import { styled } from "@mui/system";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -14,18 +13,21 @@ const TabHeader = styled("Typography")({
   paddingTop: "80px",
 });
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
-
-function Homescreen() {
+function Homescreen(props) {
+  useEffect(() => {
+    props.scrollToTop();
+  }, []);
+  //const projectsRef = this.props.projectsRef;
   return (
     <div className="App">
       <AboutMe alt="loading..." loading="lazy" />
-      <Projects alt="loading..." loading="lazy" />
+      <div>
+        <Projects
+          alt="loading..."
+          loading="lazy"
+          projectsRef={props.projectsRef}
+        />
+      </div>
       <br />
       <br />
       <Education alt="loading..." loading="lazy" />

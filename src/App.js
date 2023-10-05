@@ -10,31 +10,50 @@ import { Routes, Route } from "react-router-dom";
 const FooterPage = lazy(() => import("./Components/footer"));
 
 function App() {
-  const ref = useRef(null);
+  const projectsRef = useRef(null);
+  const scrollToTopRef = useRef(null);
   const isMobile = window.innerWidth <= 650;
-  function handlePage(newValue) {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  }
-
+  const executeScrollToProject = () => {
+    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToTop = () => {
+    scrollToTopRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="App">
+    <div className="App" ref={scrollToTopRef}>
       <br />
       <br />
       <br />
       <br />
 
-      <PrimaryAppBar handlePage={handlePage} isMobile={isMobile} />
+      <PrimaryAppBar
+        executeScrollToProject={executeScrollToProject}
+        isMobile={isMobile}
+      />
+
       <Routes>
-        <Route exact path="/" element={<Homescreen />} />
-        <Route exact path="/Home" element={<Homescreen />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <Homescreen projectsRef={projectsRef} scrollToTop={scrollToTop} />
+          }
+        />
+        <Route
+          exact
+          path="/Home"
+          element={
+            <Homescreen projectsRef={projectsRef} scrollToTop={scrollToTop} />
+          }
+        />
         <Route
           exact
           path="/projects/xpressphone"
-          element={<XpressphonePage />}
+          element={<XpressphonePage scrollToTop={scrollToTop} />}
         />
       </Routes>
 
-      <BackToTop />
+      <BackToTop scrollToTop={scrollToTop} />
 
       <Suspense fallback={<div />}>
         <FooterPage

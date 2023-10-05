@@ -1,5 +1,4 @@
 import React from "react";
-import ProjectsAnimationFile from "../Components/projectsAnimation";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Slide from "@mui/material/Slide";
@@ -18,9 +17,9 @@ const TabHeader = styled("Typography")({
   paddingLeft: "80px",
 });
 
-const Projects = () => {
+const Projects = (props) => {
   return (
-    <div>
+    <div ref={props.projectsRef}>
       <Grow in={true}>
         <Box
           sx={{

@@ -26,17 +26,16 @@ export default function MediaCard() {
       }}
     >
       <CardMedia
-        sx={{ height: 240, borderRadius: "30px, 30px, 0px, 0px" }}
+        sx={{ height: 240, width: 500, borderRadius: "30px, 30px, 0px, 0px" }}
         image={Xpressphone}
         title="Movies"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div" color="white">
+        <Typography gutterBottom variant="h4" component="div" color="white">
           Xpressphone
         </Typography>
         <Typography variant="body2" color="white">
-          Played a key role in the ground-up redesign of several website
-          sections.
+          Web Development | Web Design
         </Typography>
       </CardContent>
       <CardActions></CardActions>

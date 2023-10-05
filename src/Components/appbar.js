@@ -16,8 +16,9 @@ const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   color: "white",
 });
 
-export default function PrimaryAppBar() {
+export default function PrimaryAppBar(props) {
   const navigate = useNavigate();
+  //const { executeScrollToProject } = this.props;
   return (
     <div>
       <AppBar
@@ -65,7 +66,7 @@ export default function PrimaryAppBar() {
               />
             }
             onChange={(event) => {
-              // handlePage(1);
+              props.executeScrollToProject();
             }}
           />
           <StyledBottomNavigationAction

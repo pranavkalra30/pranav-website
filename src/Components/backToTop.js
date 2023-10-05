@@ -1,16 +1,13 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Slide from '@mui/material/Slide';
-
+import * as React from "react";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Slide from "@mui/material/Slide";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -20,27 +17,15 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 400,
+    threshold: 600,
   });
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor',
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-      });
-    }
-  };
-
   return (
-    <Slide in={trigger}  direction="up">
+    <Slide in={trigger} direction="up">
       <Box
-        onClick={handleClick}
+        onClick={props.scrollToTop}
         role="presentation"
-        sx={{ position: 'fixed', bottom: 25, right: 25 }}
+        sx={{ position: "fixed", bottom: 25, right: 25 }}
       >
         {children}
       </Box>
@@ -48,28 +33,19 @@ function ScrollTop(props) {
   );
 }
 
-ScrollTop.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
 export default function BackToTop(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-     
+
       <Toolbar id="back-to-top-anchor" />
-      <Container>
-       
-      </Container>
+      <Container></Container>
       <ScrollTop {...props}>
         <Fab aria-label="scroll back to top" variant="extended">
-            <KeyboardArrowUpIcon sx={{ mr: 1 }}/>
-          <Typography>Back to the top?</Typography> 
+          <KeyboardArrowUpIcon sx={{ mr: 1 }} />
+          <Typography sx={{ textTransform: "none" }}>
+            Back to the top
+          </Typography>
         </Fab>
       </ScrollTop>
     </React.Fragment>
