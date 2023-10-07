@@ -5,6 +5,8 @@ import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
 
+const PlaceholderCard = lazy(() => import("../Components/PlaceholderCard"));
+
 const MediaCard = lazy(() => import("../Components/projectCard"));
 const XpressphoneCard = lazy(() =>
   import("../Components/projectCardXpressphone")
@@ -52,6 +54,31 @@ const Projects = (props) => {
           <Box>
             <Suspense fallback={<div />}>
               <XpressphoneCard />
+            </Suspense>
+          </Box>
+        </Slide>
+      </Box>
+      <br />
+      <br />
+      <br />
+      <Box
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Slide direction="up" in={true}>
+          <Box>
+            <Suspense fallback={<div />}>
+              <PlaceholderCard />
+            </Suspense>
+          </Box>
+        </Slide>
+        <Slide direction="up" in={true}>
+          <Box>
+            <Suspense fallback={<div />}>
+              <PlaceholderCard />
             </Suspense>
           </Box>
         </Slide>

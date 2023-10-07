@@ -11,7 +11,7 @@ import { styled } from "@mui/system";
 import BackButton from "../Components/backButton";
 import { useNavigate } from "react-router-dom";
 
-function XpressphonePage(props) {
+export default function ModoMubiPage(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,15 +20,7 @@ function XpressphonePage(props) {
 
   function handBackButtonClick() {
     navigate("/");
-    console.log("test");
   }
-  const TabHeader = styled("Typography")({
-    color: "aliceblue",
-    fontSize: "62px",
-    textAlign: "center",
-    paddingLeft: "80px",
-    paddingTop: "80px",
-  });
 
   const HeaderText = styled("Typography")({
     color: "aliceblue",
@@ -42,7 +34,7 @@ function XpressphonePage(props) {
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
-          "Xpressphone.",
+          "Modo Mubi.",
         ]}
         wrapper="span"
         speed={50}
@@ -65,7 +57,17 @@ function XpressphonePage(props) {
         </Grow>
       </Box>
       <br />
+      <Button
+        size="large"
+        onClick={() =>
+          window.open(
+            "https://frontend--endearing-bavarois-c380b6.netlify.app",
+            "_blank"
+          )
+        }
+      >
+        Take a look
+      </Button>
     </div>
   );
 }
-export default XpressphonePage;

@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import TheMovieSearchScreen from "../Images/TheMovieSearch.png";
+import Placeholder from "../Images/Placeholder.jpg";
 import { styled } from "@mui/system";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 
@@ -18,14 +18,7 @@ export default function MediaCard() {
   const navigate = useNavigate();
   return (
     <Card
-      /* onClick={() =>
-        window.open(
-          "https://frontend--endearing-bavarois-c380b6.netlify.app",
-          "_blank"
-        )
-      }
-      */
-      onClick={() => navigate("/Projects/Modomubi")}
+      // onClick={() => navigate("/Projects/Xpressphone")}
       sx={{
         backgroundColor: "#53565c",
         borderRadius: "30px",
@@ -34,17 +27,18 @@ export default function MediaCard() {
     >
       <CardMedia
         sx={{ height: 240, width: 500, borderRadius: "30px, 30px, 0px, 0px" }}
-        image={TheMovieSearchScreen}
+        image={Placeholder}
         title="Movies"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div" color="white">
-          ModoMubi
+        <Typography gutterBottom variant="h4" component="div" color="white">
+          Placeholder
         </Typography>
         <Typography variant="body2" color="white">
-          Web Development | Web Design
+          Project
         </Typography>
       </CardContent>
+      <CardActions></CardActions>
     </Card>
   );
 }

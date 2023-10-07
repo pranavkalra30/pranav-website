@@ -17,7 +17,7 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 600,
+    threshold: 400,
   });
 
   return (
@@ -41,7 +41,14 @@ export default function BackToTop(props) {
       <Toolbar id="back-to-top-anchor" />
       <Container></Container>
       <ScrollTop {...props}>
-        <Fab aria-label="scroll back to top" variant="extended">
+        <Fab
+          aria-label="scroll back to top"
+          variant="extended"
+          sx={{
+            backgroundColor: "rgb(255 255 255 / 0.5)",
+            backdropFilter: "blur(5px)",
+          }}
+        >
           <KeyboardArrowUpIcon sx={{ mr: 1 }} />
           <Typography sx={{ textTransform: "none" }}>
             Back to the top

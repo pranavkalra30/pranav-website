@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Projects from "../PageTabs/projects";
 import Education from "../PageTabs/education";
 import { styled } from "@mui/system";
+import PrimaryAppBar from "../Components/appbar.js";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -20,6 +21,15 @@ function Homescreen(props) {
   //const projectsRef = this.props.projectsRef;
   return (
     <div className="App">
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <PrimaryAppBar
+        executeScrollToProject={props.executeScrollToProject}
+        isMobile={props.isMobile}
+      />
       <AboutMe alt="loading..." loading="lazy" />
       <div>
         <Projects
@@ -30,7 +40,6 @@ function Homescreen(props) {
       </div>
       <br />
       <br />
-      <Education alt="loading..." loading="lazy" />
     </div>
   );
 }

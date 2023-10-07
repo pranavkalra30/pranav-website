@@ -1,10 +1,10 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import PropTypes from "prop-types";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 //import { withStyles } from "@mui/material/styles";
 
@@ -63,82 +63,61 @@ import { Typography } from "@mui/material";
 
 class FooterPage extends React.Component {
   render() {
-  //  const { classes } = this.props;
+    //  const { classes } = this.props;
     return (
-      <div >
+      <div>
         <MDBFooter
           style={{
-            backgroundColor: "black"
+            backgroundColor: "black",
           }}
         >
           <MDBContainer fluid>
             <MDBRow>
               <MDBCol md="6">
-           
-
-             
                 <div style={{ paddingBottom: "10px" }} />
-     
               </MDBCol>
               <MDBCol md="6">
                 <h5
                   //className={classes.followUsText}
                   style={{
                     paddingRight: this.props.width / 5 - 10,
-                   
                   }}
                 >
-                   
-                   
-
-                    <a
+                  <a
                     //  className={classes.textTwitter}
-                      href="https://www.linkedin.com/in/pranav00100/"
-                    >
-                       <LinkedInIcon sx={{fontSize:'1.5em', color: '#9e9e9e'}} />
-                    </a>
+                    href="https://www.linkedin.com/in/pranav00100/"
+                  >
+                    <LinkedInIcon
+                      sx={{ fontSize: "1.5em", color: "#9e9e9e" }}
+                    />
+                  </a>
 
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <a
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <a
                     //  className={classes.textTwitter}
-                      href="https://github.com/pranavkalra30?tab=projects"
-                    >
-                         <GitHubIcon sx={{fontSize:'1.5em', color: '#9e9e9e'}} />
-                    </a>
-          
+                    href="https://github.com/pranavkalra30?tab=projects"
+                  >
+                    <GitHubIcon sx={{ fontSize: "1.5em", color: "#9e9e9e" }} />
+                  </a>
                 </h5>
-            
               </MDBCol>
-
-            
             </MDBRow>
           </MDBContainer>
-         
-            <MDBContainer
-              fluid
-              
-              
-            >
-                <Typography sx={{color: "#9e9e9e"}}>
-                Website designed and coded by Pranav Kalra
-                </Typography>
-             
-            </MDBContainer>
-            <MDBContainer
-              fluid
-              
-            >
-                  <Typography sx={{color: "#9e9e9e"}}>
-              &copy; {new Date().getFullYear()} Copyright:
-             Pranav Kalra
-             </Typography>
-            </MDBContainer>
+
+          <MDBContainer fluid>
+            <Typography sx={{ color: "#9e9e9e" }}>
+              Website designed and coded by Pranav Kalra
+            </Typography>
+          </MDBContainer>
+          <MDBContainer fluid>
+            <Typography sx={{ color: "#9e9e9e" }}>
+              &copy; {new Date().getFullYear()} Copyright: Pranav Kalra
+            </Typography>
+          </MDBContainer>
         </MDBFooter>
       </div>
     );
   }
 }
 
-
-
-export default (FooterPage);
+export default FooterPage;
