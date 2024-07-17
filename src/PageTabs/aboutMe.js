@@ -20,58 +20,65 @@ const HeaderText = styled("Typography")({
 const AboutMe = () => {
   return (
     <div>
-      <TypeAnimation
-        sequence={[
-          // Same substring at the start will only be typed out once, initially
-          "Hello! My name is Pranav Kalra.",
-        ]}
-        wrapper="span"
-        speed={50}
-        style={{ fontSize: "2em", display: "inline-block" }}
-      />
+      <Box sx={{ padding: "20px" }}>
+        <Box sx={{ backgroundColor: "#151619", paddingBottom: "20px" }}>
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              "Hello! My name is Pranav Kalra.",
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: "2em", display: "inline-block" }}
+          />
 
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Box>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Slide direction="up" in={true}>
-            <Card
-              sx={{
-                minWidth: 275,
-                maxWidth: 400,
-                backgroundColor: "#09315d",
-                borderRadius: "20px",
-              }}
-            >
-              <StyledTypography>
-                My main areas of expertise include Javascript, Typescript,
-                Node.js, HTML, CSS, php and Python.
-              </StyledTypography>
-            </Card>
-          </Slide>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </Box>
-        <Box>
-          <Grow in={true}>
-            <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-              <AboutMeAnimationFile />
-            </Card>
-          </Grow>
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              marginBottom: "-180px",
+            }}
+          >
+            <Box>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <Slide direction="up" in={true}>
+                <Card
+                  sx={{
+                    minWidth: 275,
+                    maxWidth: 400,
+                    backgroundColor: "#09315d",
+                    borderRadius: "20px",
+                  }}
+                >
+                  <StyledTypography>
+                    My main areas of expertise include Javascript, Typescript,
+                    Node.js, HTML, CSS, php and Python.
+                  </StyledTypography>
+                </Card>
+              </Slide>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </Box>
+            <Box>
+              <Grow in={true}>
+                <Card
+                  sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+                >
+                  <AboutMeAnimationFile />
+                </Card>
+              </Grow>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </div>

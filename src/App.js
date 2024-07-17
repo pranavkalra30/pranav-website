@@ -13,16 +13,34 @@ const FooterPage = lazy(() => import("./Components/footer"));
 function App() {
   const projectsRef = useRef(null);
   const scrollToTopRef = useRef(null);
+
+  const contactRef = useRef(null);
+  const scrollToContactRef = useRef(null);
+
   const isMobile = window.innerWidth <= 650;
+
   const executeScrollToProject = () => {
     projectsRef.current.scrollIntoView({
       window: "100px",
       behavior: "smooth",
+      marginTop: "53px",
+      offsetTop: "53",
     });
   };
+
+  const executeScrollToContact = () => {
+    contactRef.current.scrollIntoView({
+      window: "100px",
+      behavior: "smooth",
+      marginTop: "53px",
+      offsetTop: "53",
+    });
+  };
+
   const scrollToTop = () => {
     scrollToTopRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <div className="App" ref={scrollToTopRef}>
       <Routes>
@@ -33,7 +51,9 @@ function App() {
             <Homescreen
               projectsRef={projectsRef}
               scrollToTop={scrollToTop}
+              contactRef={contactRef}
               executeScrollToProject={executeScrollToProject}
+              executeScrollToContact={executeScrollToContact}
               isMobile={isMobile}
             />
           }
@@ -44,8 +64,10 @@ function App() {
           element={
             <Homescreen
               projectsRef={projectsRef}
+              contactRef={contactRef}
               scrollToTop={scrollToTop}
               executeScrollToProject={executeScrollToProject}
+              executeScrollToContact={executeScrollToContact}
               isMobile={isMobile}
             />
           }

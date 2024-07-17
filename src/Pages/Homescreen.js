@@ -5,6 +5,8 @@ import Projects from "../PageTabs/projects";
 import Education from "../PageTabs/education";
 import { styled } from "@mui/system";
 import PrimaryAppBar from "../Components/appbar.js";
+import ContactMe from "../Components/contactform";
+import Box from "@mui/material/Box";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -28,6 +30,7 @@ function Homescreen(props) {
 
       <PrimaryAppBar
         executeScrollToProject={props.executeScrollToProject}
+        executeScrollToContact={props.executeScrollToContact}
         isMobile={props.isMobile}
       />
       <AboutMe alt="loading..." loading="lazy" />
@@ -40,6 +43,13 @@ function Homescreen(props) {
       </div>
       <br />
       <br />
+      <div>
+        <ContactMe
+          alt="loading..."
+          loading="lazy"
+          contactRef={props.contactRef}
+        />
+      </div>
     </div>
   );
 }

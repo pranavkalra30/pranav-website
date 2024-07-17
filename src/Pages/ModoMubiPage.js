@@ -19,7 +19,7 @@ export default function ModoMubiPage(props) {
   }, []);
 
   function handBackButtonClick() {
-    navigate("/");
+    navigate("/Home");
   }
 
   const HeaderText = styled("Typography")({

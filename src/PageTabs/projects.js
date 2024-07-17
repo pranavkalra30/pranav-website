@@ -14,7 +14,7 @@ const XpressphoneCard = lazy(() =>
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
-  fontSize: "80px",
+  fontSize: "60px",
   textAlign: "center",
   paddingLeft: "80px",
 });
@@ -22,66 +22,70 @@ const TabHeader = styled("Typography")({
 const Projects = (props) => {
   return (
     <div ref={props.projectsRef}>
-      <Grow in={true}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            marginLeft: "30px",
-          }}
-        >
-          <TabHeader>Projects</TabHeader>
+      <Box sx={{ padding: "20px" }}>
+        <Box sx={{ backgroundColor: "#151619", paddingBottom: " 40px" }}>
+          <Grow in={true}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                marginLeft: "30px",
+              }}
+            >
+              <TabHeader sx={{ paddingTop: "30px" }}>Projects</TabHeader>
 
-          {/* <ProjectsAnimationFile /> */}
+              {/* <ProjectsAnimationFile /> */}
+            </Box>
+          </Grow>
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <MediaCard />
+                </Suspense>
+              </Box>
+            </Slide>
+
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <XpressphoneCard />
+                </Suspense>
+              </Box>
+            </Slide>
+          </Box>
+          <br />
+          <br />
+          <br />
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <PlaceholderCard />
+                </Suspense>
+              </Box>
+            </Slide>
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <PlaceholderCard />
+                </Suspense>
+              </Box>
+            </Slide>
+          </Box>
         </Box>
-      </Grow>
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Slide direction="up" in={true}>
-          <Box>
-            <Suspense fallback={<div />}>
-              <MediaCard />
-            </Suspense>
-          </Box>
-        </Slide>
-
-        <Slide direction="up" in={true}>
-          <Box>
-            <Suspense fallback={<div />}>
-              <XpressphoneCard />
-            </Suspense>
-          </Box>
-        </Slide>
-      </Box>
-      <br />
-      <br />
-      <br />
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Slide direction="up" in={true}>
-          <Box>
-            <Suspense fallback={<div />}>
-              <PlaceholderCard />
-            </Suspense>
-          </Box>
-        </Slide>
-        <Slide direction="up" in={true}>
-          <Box>
-            <Suspense fallback={<div />}>
-              <PlaceholderCard />
-            </Suspense>
-          </Box>
-        </Slide>
       </Box>
     </div>
   );

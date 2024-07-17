@@ -20,7 +20,6 @@ function XpressphonePage(props) {
 
   function handBackButtonClick() {
     navigate("/");
-    console.log("test");
   }
   const TabHeader = styled("Typography")({
     color: "aliceblue",

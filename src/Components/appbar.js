@@ -69,56 +69,7 @@ export default function PrimaryAppBar(props) {
               props.executeScrollToProject();
             }}
           />
-          <StyledBottomNavigationAction
-            showLabel
-            label={
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "16px",
-                }}
-              >
-                {" "}
-                About Me
-              </Typography>
-            }
-            icon={
-              <PersonIcon
-                sx={{
-                  color: "white",
-                  fontSize: "2.5em",
-                }}
-              />
-            }
-            onChange={(event) => {
-              // handlePage(2);
-            }}
-          />
-          <StyledBottomNavigationAction
-            showLabel
-            label={
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "16px",
-                }}
-              >
-                {" "}
-                Education
-              </Typography>
-            }
-            icon={
-              <SchoolIcon
-                sx={{
-                  color: "white",
-                  fontSize: "2.5em",
-                }}
-              />
-            }
-            onChange={(event) => {
-              // handlePage(3);
-            }}
-          />
+
           <StyledBottomNavigationAction
             label={
               <Typography
@@ -144,6 +95,32 @@ export default function PrimaryAppBar(props) {
               // handlePage(0);
             }}
           ></StyledBottomNavigationAction>
+
+          <StyledBottomNavigationAction
+            showLabel
+            onChange={(event) => {
+              props.executeScrollToContact();
+            }}
+            label={
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "16px",
+                }}
+              >
+                {" "}
+                Contact
+              </Typography>
+            }
+            icon={
+              <PersonIcon
+                sx={{
+                  color: "white",
+                  fontSize: "2.5em",
+                }}
+              />
+            }
+          />
         </Toolbar>
       </AppBar>
     </div>
