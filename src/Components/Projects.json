@@ -1,12 +1,27 @@
 {
     "data":{
        "1":{
-          "title":"Expertise",
-          "details":"My main areas of expertise include Javascript, Typescript, Node.js, HTML, CSS, php and Python."
+          "title":"ModoMubi",
+          "details":"Web Development | Web Design",
+          "image": "https://imgur.com/612mwnO"
        },
        "2":{
-          "title":"Expertise",
-          "details":"My main areas of expertise include Javascript, Typescript, Node.js, HTML, CSS, php and Python."
-       }
+          "title":"Xpressphone",
+          "details":"Web Development | Web Design",
+          "image": "https://imgur.com/ya7FvrI"
+
+       },
+       "3":{
+         "title":"Placeholder",
+         "details":"Placeholder",
+         "image": "https://imgur.com/undefined"
+
+      },
+      "4":{
+         "title":"Placeholder",
+         "details":"Placeholder",
+         "image": "https://imgur.com/undefined"
+
+      }
     }
  }
