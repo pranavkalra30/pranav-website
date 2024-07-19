@@ -39,6 +39,7 @@ function Homescreen(props) {
           alt="loading..."
           loading="lazy"
           projectsRef={props.projectsRef}
+          isMobile={props.isMobile}
         />
       </div>
       <br />

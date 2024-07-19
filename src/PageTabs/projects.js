@@ -40,7 +40,7 @@ const Projects = (props) => {
           <Box
             style={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: props.isMobile ? "column" : "row",
               justifyContent: "space-evenly",
             }}
           >
@@ -51,7 +51,9 @@ const Projects = (props) => {
                 </Suspense>
               </Box>
             </Slide>
-
+            {props.isMobile && <br />}
+            {props.isMobile && <br />}
+            {props.isMobile && <br />}
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
@@ -66,7 +68,7 @@ const Projects = (props) => {
           <Box
             style={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: props.isMobile ? "column" : "row",
               justifyContent: "space-evenly",
             }}
           >
@@ -77,6 +79,9 @@ const Projects = (props) => {
                 </Suspense>
               </Box>
             </Slide>
+            {props.isMobile && <br />}
+            {props.isMobile && <br />}
+            {props.isMobile && <br />}
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
