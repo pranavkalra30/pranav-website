@@ -40,17 +40,23 @@ export default function ContactMe(props) {
       <div ref={props.contactRef}>
         <Box sx={{ padding: "20px" }}>
           <Box sx={{ backgroundColor: "#151619", paddingBottom: " 40px" }}>
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Get in touch.",
-              ]}
-              wrapper="span"
-              speed={50}
-              style={{ fontSize: "2em", display: "inline-block" }}
-            />
-            <br />
-            <br />
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                marginLeft: "30px",
+              }}
+            >
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "Get in touch.",
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "2em", display: "inline-block" }}
+              />
+            </Box>
             <Box
               sx={{
                 display: "flex",
