@@ -9,6 +9,7 @@ import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
 import { styled } from "@mui/system";
 import BackButton from "../Components/backButton";
+import XpressphoneWide from "../Images/XpressphoneWide.png";
 import { useNavigate } from "react-router-dom";
 
 function XpressphonePage(props) {
@@ -50,7 +51,6 @@ function XpressphonePage(props) {
       <br />
       <br />
       <br />
-      <HeaderText> Sorry, This Page is still Under Construction</HeaderText>
       <Box
         sx={{
           display: "flex",
@@ -59,7 +59,11 @@ function XpressphonePage(props) {
       >
         <Grow in={true}>
           <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <UnderConstructionAnimationFile />
+            <img
+              src={XpressphoneWide}
+              height="500px"
+              sx={{ height: "100px", width: "100px" }}
+            />
           </Card>
         </Grow>
       </Box>

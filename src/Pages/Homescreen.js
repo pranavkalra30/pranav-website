@@ -7,6 +7,7 @@ import { styled } from "@mui/system";
 import PrimaryAppBar from "../Components/appbar.js";
 import ContactMe from "../Components/contactform";
 import Box from "@mui/material/Box";
+import TestAnimation from "../Components/testAnimations.tsx";
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
@@ -33,9 +34,10 @@ function Homescreen(props) {
         executeScrollToContact={props.executeScrollToContact}
         isMobile={props.isMobile}
       />
+
       <AboutMe alt="loading..." loading="lazy" />
       <div>
-        <Projects
+        <TestAnimation
           alt="loading..."
           loading="lazy"
           projectsRef={props.projectsRef}

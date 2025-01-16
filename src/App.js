@@ -4,9 +4,11 @@ import React from "react";
 import Homescreen from "./Pages/Homescreen";
 import XpressphonePage from "./Pages/XpressphonePage";
 import ModoMubiPage from "./Pages/ModoMubiPage";
+import UnderConstruction from "./Pages/UnderConstruction.js";
 import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+import AnimatedCursor from "react-animated-cursor";
 
 const FooterPage = lazy(() => import("./Components/footer"));
 
@@ -72,6 +74,7 @@ function App() {
             />
           }
         />
+
         <Route
           exact
           path="/projects/xpressphone"
@@ -83,9 +86,15 @@ function App() {
           path="/projects/modomubi"
           element={<ModoMubiPage scrollToTop={scrollToTop} />}
         />
+        <Route
+          exact
+          path="/projects/underconstruction"
+          element={<UnderConstruction scrollToTop={scrollToTop} />}
+        />
       </Routes>
 
       <BackToTop scrollToTop={scrollToTop} />
+      <AnimatedCursor />
 
       <Suspense fallback={<div />}>
         <FooterPage

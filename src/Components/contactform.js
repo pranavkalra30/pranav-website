@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { styled } from "@mui/system";
+import { TypeAnimation } from "react-type-animation";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const TabHeader = styled("Typography")({
@@ -46,7 +47,15 @@ export default function ContactMe(props) {
                 marginLeft: "30px",
               }}
             >
-              <TabHeader>Send a Message</TabHeader>
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "Get in touch.",
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "2em", display: "inline-block" }}
+              />
             </Box>
             <Box
               sx={{

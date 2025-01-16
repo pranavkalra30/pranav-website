@@ -21,11 +21,17 @@ const AboutMe = () => {
   return (
     <div>
       <Box sx={{ padding: "20px" }}>
-        <Box sx={{ backgroundColor: "#151619", paddingBottom: "20px" }}>
+        <Box
+          sx={{
+            backgroundColor: "#151619",
+            paddingBottom: "20px",
+            borderRadius: "20px",
+          }}
+        >
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
-              "Hello! My name is Pranav Kalra.",
+              "About me.",
             ]}
             wrapper="span"
             speed={50}

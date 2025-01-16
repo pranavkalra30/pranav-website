@@ -9,6 +9,7 @@ import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
 import { styled } from "@mui/system";
 import BackButton from "../Components/backButton";
+import TheMovieSearchWide from "../Images/TheMovieSearchWide.png";
 import { useNavigate } from "react-router-dom";
 
 export default function ModoMubiPage(props) {
@@ -43,7 +44,6 @@ export default function ModoMubiPage(props) {
       <br />
       <br />
       <br />
-      <HeaderText> Sorry, This Page is still Under Construction</HeaderText>
       <Box
         sx={{
           display: "flex",
@@ -52,7 +52,7 @@ export default function ModoMubiPage(props) {
       >
         <Grow in={true}>
           <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <UnderConstructionAnimationFile />
+            <img src={TheMovieSearchWide} />
           </Card>
         </Grow>
       </Box>
@@ -66,7 +66,9 @@ export default function ModoMubiPage(props) {
           )
         }
       >
-        Take a look
+        <Card sx={{ borderRadius: "20px", padding: "20px" }}>
+          <Typography> Go to the Website</Typography>
+        </Card>
       </Button>
     </div>
   );

@@ -1,4 +1,5 @@
-import React from "react";
+import "../App.css";
+import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import { TypeAnimation } from "react-type-animation";
 import UnderConstructionAnimationFile from "../Components/underConstruction";
@@ -7,19 +8,49 @@ import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
 import { styled } from "@mui/system";
+import BackButton from "../Components/backButton";
+import XpressphoneWide from "../Images/XpressphoneWide.png";
+import { useNavigate } from "react-router-dom";
 
-const StyledTypography = styled("Typography")({
-  color: "aliceblue",
-});
+function XpressphonePage(props) {
+  const navigate = useNavigate();
 
-const HeaderText = styled("Typography")({
-  color: "aliceblue",
-});
+  useEffect(() => {
+    props.scrollToTop();
+  }, []);
 
-const UnderConstruction = () => {
+  function handBackButtonClick() {
+    navigate("/");
+  }
+  const TabHeader = styled("Typography")({
+    color: "aliceblue",
+    fontSize: "62px",
+    textAlign: "center",
+    paddingLeft: "80px",
+    paddingTop: "80px",
+  });
+
+  const HeaderText = styled("Typography")({
+    color: "aliceblue",
+  });
+
   return (
     <div>
-      <HeaderText> Sorry, This Page is still Under Construction</HeaderText>
+      <br />
+      <br />
+      <BackButton handBackButtonClick={handBackButtonClick} />{" "}
+      <TypeAnimation
+        sequence={[
+          // Same substring at the start will only be typed out once, initially
+          "Under Construction.",
+        ]}
+        wrapper="span"
+        speed={50}
+        style={{ fontSize: "3em", display: "inline-block" }}
+      />
+      <br />
+      <br />
+      <br />
       <Box
         sx={{
           display: "flex",
@@ -33,11 +64,7 @@ const UnderConstruction = () => {
         </Grow>
       </Box>
       <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
-};
-
-export default UnderConstruction;
+}
+export default XpressphonePage;
