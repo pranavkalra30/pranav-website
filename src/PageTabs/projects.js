@@ -4,6 +4,7 @@ import Grow from "@mui/material/Grow";
 import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
+import { TypeAnimation } from "react-type-animation";
 
 const PlaceholderCard = lazy(() => import("../Components/PlaceholderCard"));
 
@@ -14,16 +15,21 @@ const XpressphoneCard = lazy(() =>
 
 const TabHeader = styled("Typography")({
   color: "aliceblue",
-  fontSize: "60px",
+
   textAlign: "center",
-  paddingLeft: "80px",
 });
 
 const Projects = (props) => {
   return (
     <div ref={props.projectsRef}>
       <Box sx={{ padding: "20px" }}>
-        <Box sx={{ backgroundColor: "#151619", paddingBottom: " 40px" }}>
+        <Box
+          sx={{
+            backgroundColor: "#151619",
+            paddingBottom: " 40px",
+            borderRadius: "20px",
+          }}
+        >
           <Grow in={true}>
             <Box
               sx={{
@@ -32,11 +38,21 @@ const Projects = (props) => {
                 marginLeft: "30px",
               }}
             >
-              <TabHeader sx={{ paddingTop: "30px" }}>Projects</TabHeader>
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "Projects I have worked on.",
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "2em", display: "inline-block" }}
+              />
 
               {/* <ProjectsAnimationFile /> */}
             </Box>
           </Grow>
+          <br />
+
           <Box
             style={{
               display: "flex",

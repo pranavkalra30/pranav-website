@@ -12,7 +12,7 @@ function UnderConstructionAnimationFile() {
 
   return (
     <div>
-      <div id="under-construction" style={{ width: 600, height: 600 }} />
+      <div id="under-construction" style={{ width: 400, height: 400 }} />
     </div>
   );
 }

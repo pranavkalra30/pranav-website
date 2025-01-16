@@ -8,7 +8,6 @@ import UnderConstruction from "./Pages/UnderConstruction.js";
 import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
-import AnimatedCursor from "react-animated-cursor";
 
 const FooterPage = lazy(() => import("./Components/footer"));
 
@@ -20,6 +19,7 @@ function App() {
   const scrollToContactRef = useRef(null);
 
   const isMobile = window.innerWidth <= 650;
+  const deviceWidth = window.innerWidth;
 
   const executeScrollToProject = () => {
     projectsRef.current.scrollIntoView({
@@ -57,6 +57,7 @@ function App() {
               executeScrollToProject={executeScrollToProject}
               executeScrollToContact={executeScrollToContact}
               isMobile={isMobile}
+              deviceWidth={deviceWidth}
             />
           }
         />
@@ -71,6 +72,7 @@ function App() {
               executeScrollToProject={executeScrollToProject}
               executeScrollToContact={executeScrollToContact}
               isMobile={isMobile}
+              deviceWidth={deviceWidth}
             />
           }
         />
@@ -78,27 +80,50 @@ function App() {
         <Route
           exact
           path="/projects/xpressphone"
-          element={<XpressphonePage scrollToTop={scrollToTop} />}
+          element={
+            <XpressphonePage
+              scrollToTop={scrollToTop}
+              isMobile={isMobile}
+              deviceWidth={deviceWidth}
+            />
+          }
         />
 
         <Route
           exact
           path="/projects/modomubi"
-          element={<ModoMubiPage scrollToTop={scrollToTop} />}
+          element={
+            <ModoMubiPage
+              scrollToTop={scrollToTop}
+              isMobile={isMobile}
+              deviceWidth={deviceWidth}
+            />
+          }
         />
         <Route
           exact
           path="/projects/underconstruction"
-          element={<UnderConstruction scrollToTop={scrollToTop} />}
+          element={
+            <UnderConstruction
+              scrollToTop={scrollToTop}
+              isMobile={isMobile}
+              deviceWidth={deviceWidth}
+            />
+          }
         />
       </Routes>
 
-      <BackToTop scrollToTop={scrollToTop} />
-      <AnimatedCursor />
+      <BackToTop
+        scrollToTop={scrollToTop}
+        isMobile={isMobile}
+        deviceWidth={deviceWidth}
+      />
 
       <Suspense fallback={<div />}>
         <FooterPage
-        // width={this.state.width}
+          isMobile={isMobile}
+          deviceWidth={deviceWidth}
+          // width={this.state.width}
         />
       </Suspense>
     </div>

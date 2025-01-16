@@ -39,6 +39,10 @@ function XpressphonePage(props) {
       <br />
       <br />
       <BackButton handBackButtonClick={handBackButtonClick} />{" "}
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
@@ -58,11 +62,20 @@ function XpressphonePage(props) {
         }}
       >
         <Grow in={true}>
-          <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
+          <Card
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              borderRadius: "15px",
+            }}
+          >
             <img
               src={XpressphoneWide}
-              height="500px"
-              sx={{ height: "100px", width: "100px" }}
+              width={
+                props.isMobile
+                  ? props.deviceWidth * 0.9
+                  : props.deviceWidth * 0.75
+              }
             />
           </Card>
         </Grow>

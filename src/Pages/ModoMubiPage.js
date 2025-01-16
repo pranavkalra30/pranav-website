@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Card from "@mui/material/Card";
-import { styled } from "@mui/system";
+import { borderRadius, maxWidth, styled } from "@mui/system";
 import BackButton from "../Components/backButton";
 import TheMovieSearchWide from "../Images/TheMovieSearchWide.png";
 import { useNavigate } from "react-router-dom";
@@ -30,8 +30,11 @@ export default function ModoMubiPage(props) {
   return (
     <div>
       <br />
-      <br />
-      <BackButton handBackButtonClick={handBackButtonClick} />{" "}
+      <BackButton props={props} handBackButtonClick={handBackButtonClick} />
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
+      {props.isMobile && <br />}
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
@@ -51,8 +54,21 @@ export default function ModoMubiPage(props) {
         }}
       >
         <Grow in={true}>
-          <Card sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-            <img src={TheMovieSearchWide} />
+          <Card
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              borderRadius: "15px",
+            }}
+          >
+            <img
+              src={TheMovieSearchWide}
+              width={
+                props.isMobile
+                  ? props.deviceWidth * 0.9
+                  : props.deviceWidth * 0.75
+              }
+            />
           </Card>
         </Grow>
       </Box>

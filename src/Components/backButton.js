@@ -9,7 +9,7 @@ import Fab from "@mui/material/Fab";
 import ReplyIcon from "@mui/icons-material/Reply";
 import Grow from "@mui/material/Grow";
 
-export default function BackToTop(props) {
+export default function BackButton(props) {
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -24,7 +24,7 @@ export default function BackToTop(props) {
           backdropFilter: "blur(5px)",
           position: "fixed",
           top: 60,
-          left: 70,
+          left: props.isMobile ? 30 : 70,
         }}
         onClick={props.handBackButtonClick}
       >

@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import Placeholder from "../Images/Placeholder.jpg";
-import XpressphoneCard from "../Images/Xpressphone.png";
-import TheMovieSearch from "../Images/TheMovieSearch.jpeg";
+import XpressphoneCard from "../Images/XpressphoneWide.png";
+import TheMovieSearch from "../Images/TheMovieSearchWide.png";
 import { useInView } from "motion/react";
 import React from "react";
 import { Box, CardContent, Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 
-export default function ScrollTriggered() {
+export default function ScrollTriggered(props) {
   const navigate = useNavigate();
   return (
     <div>
@@ -45,6 +45,7 @@ export default function ScrollTriggered() {
                 title={title}
                 details={details}
                 link={link}
+                props={props}
               />
             ))}
           </div>
@@ -64,9 +65,12 @@ interface CardProps {
   link: string;
 }
 
-function Card({ emoji, hueA, hueB, i, title, details, link }: CardProps) {
+function Card(
+  { emoji, hueA, hueB, i, title, details, link }: CardProps,
+  props
+) {
   const navigate = useNavigate();
-  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
+  const background = "transparent";
 
   return (
     <motion.div
@@ -84,6 +88,7 @@ function Card({ emoji, hueA, hueB, i, title, details, link }: CardProps) {
           style={{ width: "100%", height: "100%", borderRadius: "20px" }}
           onClick={() => navigate(link)}
         />
+        {props.isMobile && <br />}
         <CardContent
           onClick={() => navigate(link)}
           sx={{
@@ -104,12 +109,8 @@ function Card({ emoji, hueA, hueB, i, title, details, link }: CardProps) {
 }
 
 const cardVariants: Variants = {
-  offscreen: {
-    y: 300,
-  },
   onscreen: {
     y: 50,
-    rotate: -10,
     transition: {
       type: "spring",
       bounce: 0.4,
@@ -126,7 +127,7 @@ const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 
 const container: React.CSSProperties = {
   margin: "100px auto",
-  maxWidth: 500,
+  maxWidth: 800,
   paddingBottom: 100,
   width: "100%",
 };
@@ -138,7 +139,7 @@ const cardContainer: React.CSSProperties = {
   alignItems: "center",
   position: "relative",
   paddingTop: 20,
-  marginBottom: -120,
+  marginBottom: 0,
 };
 
 const splash: React.CSSProperties = {
@@ -152,8 +153,7 @@ const splash: React.CSSProperties = {
 
 const card: React.CSSProperties = {
   fontSize: 164,
-  width: 300,
-  height: 430,
+  width: 600,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

@@ -3,7 +3,7 @@ import AboutMe from "../PageTabs/aboutMe.js";
 import React, { useEffect } from "react";
 import Projects from "../PageTabs/projects";
 import Education from "../PageTabs/education";
-import { styled } from "@mui/system";
+import { maxWidth, styled } from "@mui/system";
 import PrimaryAppBar from "../Components/appbar.js";
 import ContactMe from "../Components/contactform";
 import Box from "@mui/material/Box";
@@ -23,7 +23,8 @@ function Homescreen(props) {
   }, []);
   //const projectsRef = this.props.projectsRef;
   return (
-    <div className="App">
+    <div className="App" sx={{ maxWidth: props.windowWidth }}>
+      {console.log(props.windowWidth)}
       <br />
       <br />
       <br />
@@ -37,11 +38,12 @@ function Homescreen(props) {
 
       <AboutMe alt="loading..." loading="lazy" />
       <div>
-        <TestAnimation
+        <Projects
           alt="loading..."
           loading="lazy"
           projectsRef={props.projectsRef}
           isMobile={props.isMobile}
+          deviceWidth={props.deviceWidth}
         />
       </div>
       <br />
