@@ -31,26 +31,20 @@ const Projects = (props) => {
           }}
         >
           <Grow in={true}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-start",
-                marginLeft: "30px",
-              }}
-            >
-              <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed out once, initially
-                  "Projects I have worked on.",
-                ]}
-                wrapper="span"
-                speed={50}
-                style={{ fontSize: "2em", display: "inline-block" }}
-              />
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                "Projects I have worked on.",
+              ]}
+              wrapper="span"
+              speed={50}
+              style={{ fontSize: "2em", display: "inline-block" }}
+            />
 
-              {/* <ProjectsAnimationFile /> */}
-            </Box>
+            {/* <ProjectsAnimationFile /> */}
           </Grow>
+          <br />
+          <br />
           <br />
 
           <Box
