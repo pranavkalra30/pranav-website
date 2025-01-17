@@ -11,6 +11,7 @@ import { Toolbar, Typography } from "@mui/material";
 import P from "../Images/Icon.png";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Dropdown from "./Dropdown";
 
 const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   color: "white",
@@ -35,7 +36,7 @@ export default function PrimaryAppBar(props) {
             width: "100%",
             backdropFilter: "blur(20px)",
             backgroundColor: "transparent",
-            justifyContent: "center",
+            justifyContent: "space-evenly",
           }}
           showLabels
         >
@@ -43,7 +44,7 @@ export default function PrimaryAppBar(props) {
             {" "}
             <img src={P} alt="loading..." loading="lazy" width={100} />
           </Button>
-
+          {/*
           <StyledBottomNavigationAction
             showLabel
             label={
@@ -96,6 +97,8 @@ export default function PrimaryAppBar(props) {
             }}
           ></StyledBottomNavigationAction>
 
+     
+        
           <StyledBottomNavigationAction
             showLabel
             onChange={(event) => {
@@ -121,6 +124,10 @@ export default function PrimaryAppBar(props) {
               />
             }
           />
+
+          */}
+
+          <Dropdown />
         </Toolbar>
       </AppBar>
     </div>

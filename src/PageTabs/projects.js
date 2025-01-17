@@ -5,6 +5,7 @@ import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
 import { styled } from "@mui/system";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 const PlaceholderCard = lazy(() => import("../Components/PlaceholderCard"));
 
@@ -34,8 +35,7 @@ const Projects = (props) => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "flex-start",
-                marginLeft: "30px",
+                justifyContent: "center",
               }}
             >
               <TypeAnimation
@@ -45,6 +45,7 @@ const Projects = (props) => {
                 ]}
                 wrapper="span"
                 speed={50}
+                cursor={false}
                 style={{ fontSize: "2em", display: "inline-block" }}
               />
 
@@ -63,7 +64,22 @@ const Projects = (props) => {
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
-                  <MediaCard />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.5,
+                      },
+                    }}
+                  >
+                    <MediaCard />
+                  </motion.div>
                 </Suspense>
               </Box>
             </Slide>
@@ -73,7 +89,22 @@ const Projects = (props) => {
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
-                  <XpressphoneCard />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.5,
+                      },
+                    }}
+                  >
+                    <XpressphoneCard />
+                  </motion.div>
                 </Suspense>
               </Box>
             </Slide>
@@ -91,7 +122,22 @@ const Projects = (props) => {
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
-                  <PlaceholderCard />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.5,
+                      },
+                    }}
+                  >
+                    <PlaceholderCard />
+                  </motion.div>
                 </Suspense>
               </Box>
             </Slide>
@@ -101,7 +147,22 @@ const Projects = (props) => {
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
-                  <PlaceholderCard />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.5,
+                      },
+                    }}
+                  >
+                    <PlaceholderCard />
+                  </motion.div>
                 </Suspense>
               </Box>
             </Slide>

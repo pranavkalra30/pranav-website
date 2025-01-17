@@ -8,6 +8,8 @@ import Grow from "@mui/material/Grow";
 import Slide from "@mui/material/Slide";
 import Card from "@mui/material/Card";
 import { styled } from "@mui/system";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 const StyledTypography = styled("Typography")({
   color: "aliceblue",
@@ -35,6 +37,7 @@ const AboutMe = () => {
             ]}
             wrapper="span"
             speed={50}
+            cursor={false}
             style={{ fontSize: "2em", display: "inline-block" }}
           />
 
@@ -53,7 +56,16 @@ const AboutMe = () => {
               <br />
               <br />
               <br />
-              <Slide direction="up" in={true}>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.4,
+                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }}
+              >
+                {" "}
                 <Card
                   sx={{
                     minWidth: 275,
@@ -67,7 +79,8 @@ const AboutMe = () => {
                     Node.js, HTML, CSS, php and Python.
                   </StyledTypography>
                 </Card>
-              </Slide>
+              </motion.div>
+
               <br />
               <br />
               <br />

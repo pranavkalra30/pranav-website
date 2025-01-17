@@ -43,8 +43,7 @@ export default function ContactMe(props) {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "flex-start",
-                marginLeft: "30px",
+                justifyContent: "center",
               }}
             >
               <TypeAnimation
@@ -54,6 +53,7 @@ export default function ContactMe(props) {
                 ]}
                 wrapper="span"
                 speed={50}
+                cursor={false}
                 style={{ fontSize: "2em", display: "inline-block" }}
               />
             </Box>

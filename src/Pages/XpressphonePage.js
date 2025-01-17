@@ -11,6 +11,7 @@ import { styled } from "@mui/system";
 import BackButton from "../Components/backButton";
 import XpressphoneWide from "../Images/XpressphoneWide.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function XpressphonePage(props) {
   const navigate = useNavigate();
@@ -61,7 +62,18 @@ function XpressphonePage(props) {
           justifyContent: "center",
         }}
       >
-        <Grow in={true}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.4,
+            scale: {
+              type: "spring",
+              visualDuration: 0.4,
+              bounce: 0.5,
+            },
+          }}
+        >
           <Card
             sx={{
               backgroundColor: "transparent",
@@ -78,7 +90,7 @@ function XpressphonePage(props) {
               }
             />
           </Card>
-        </Grow>
+        </motion.div>
       </Box>
       <br />
     </div>
