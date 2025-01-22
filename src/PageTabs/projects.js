@@ -58,7 +58,8 @@ const Projects = (props) => {
             style={{
               display: "flex",
               flexDirection: props.isMobile ? "column" : "row",
-              justifyContent: "space-evenly",
+              justifyContent: props.isMobile ? "center" : "space-evenly",
+              alignItems: props.isMobile && "center",
             }}
           >
             <Slide direction="up" in={true}>
@@ -78,7 +79,10 @@ const Projects = (props) => {
                       },
                     }}
                   >
-                    <MediaCard />
+                    <MediaCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
                   </motion.div>
                 </Suspense>
               </Box>
@@ -103,7 +107,10 @@ const Projects = (props) => {
                       },
                     }}
                   >
-                    <XpressphoneCard />
+                    <XpressphoneCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
                   </motion.div>
                 </Suspense>
               </Box>
@@ -116,7 +123,8 @@ const Projects = (props) => {
             style={{
               display: "flex",
               flexDirection: props.isMobile ? "column" : "row",
-              justifyContent: "space-evenly",
+              justifyContent: props.isMobile ? "center" : "space-evenly",
+              alignItems: props.isMobile && "center",
             }}
           >
             <Slide direction="up" in={true}>
@@ -136,7 +144,10 @@ const Projects = (props) => {
                       },
                     }}
                   >
-                    <PlaceholderCard />
+                    <PlaceholderCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
                   </motion.div>
                 </Suspense>
               </Box>
@@ -161,7 +172,10 @@ const Projects = (props) => {
                       },
                     }}
                   >
-                    <PlaceholderCard />
+                    <PlaceholderCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
                   </motion.div>
                 </Suspense>
               </Box>

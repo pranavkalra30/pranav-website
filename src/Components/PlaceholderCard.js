@@ -14,7 +14,7 @@ const StyledCard = styled("Card")({
   backgroundColor: "#53565c",
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const navigate = useNavigate();
   return (
     <Card
@@ -23,6 +23,7 @@ export default function MediaCard() {
         backgroundColor: "#53565c",
         borderRadius: "30px",
         cursor: "pointer",
+        width: props.isMobile ? props.deviceWidth * 0.8 : "100%",
       }}
     >
       <CardMedia
