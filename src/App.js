@@ -8,75 +8,44 @@ import UnderConstruction from "./Pages/UnderConstruction.js";
 import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+import useWindowSize from "./hooks/useWindowSize";
 
 const FooterPage = lazy(() => import("./Components/footer"));
 
 function App() {
   const projectsRef = useRef(null);
   const scrollToTopRef = useRef(null);
-
   const contactRef = useRef(null);
-  const scrollToContactRef = useRef(null);
 
-  const isMobile = window.innerWidth <= 650;
-  const deviceWidth = window.innerWidth;
+  const { width: deviceWidth, isMobile } = useWindowSize();
 
   const executeScrollToProject = () => {
-    projectsRef.current.scrollIntoView({
-      window: "100px",
-      behavior: "smooth",
-      marginTop: "53px",
-      offsetTop: "53",
-    });
+    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const executeScrollToContact = () => {
-    contactRef.current.scrollIntoView({
-      window: "100px",
-      behavior: "smooth",
-      marginTop: "53px",
-      offsetTop: "53",
-    });
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToTop = () => {
-    scrollToTopRef.current.scrollIntoView({ behavior: "smooth" });
+    scrollToTopRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sharedProps = {
+    projectsRef,
+    contactRef,
+    scrollToTop,
+    executeScrollToProject,
+    executeScrollToContact,
+    isMobile,
+    deviceWidth,
   };
 
   return (
     <div className="App" ref={scrollToTopRef}>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Homescreen
-              projectsRef={projectsRef}
-              scrollToTop={scrollToTop}
-              contactRef={contactRef}
-              executeScrollToProject={executeScrollToProject}
-              executeScrollToContact={executeScrollToContact}
-              isMobile={isMobile}
-              deviceWidth={deviceWidth}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/Home"
-          element={
-            <Homescreen
-              projectsRef={projectsRef}
-              contactRef={contactRef}
-              scrollToTop={scrollToTop}
-              executeScrollToProject={executeScrollToProject}
-              executeScrollToContact={executeScrollToContact}
-              isMobile={isMobile}
-              deviceWidth={deviceWidth}
-            />
-          }
-        />
-
+        <Route exact path="/" element={<Homescreen {...sharedProps} />} />
+        <Route exact path="/Home" element={<Homescreen {...sharedProps} />} />
         <Route
           exact
           path="/projects/xpressphone"
@@ -88,7 +57,6 @@ function App() {
             />
           }
         />
-
         <Route
           exact
           path="/projects/modomubi"
@@ -113,18 +81,10 @@ function App() {
         />
       </Routes>
 
-      <BackToTop
-        scrollToTop={scrollToTop}
-        isMobile={isMobile}
-        deviceWidth={deviceWidth}
-      />
+      <BackToTop scrollToTop={scrollToTop} isMobile={isMobile} deviceWidth={deviceWidth} />
 
       <Suspense fallback={<div />}>
-        <FooterPage
-          isMobile={isMobile}
-          deviceWidth={deviceWidth}
-          // width={this.state.width}
-        />
+        <FooterPage isMobile={isMobile} deviceWidth={deviceWidth} />
       </Suspense>
     </div>
   );

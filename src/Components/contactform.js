@@ -1,160 +1,249 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
+import { useState } from "react";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import EmailIcon from "@mui/icons-material/Email";
+import SendIcon from "@mui/icons-material/Send";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { styled } from "@mui/system";
+import CircularProgress from "@mui/material/CircularProgress";
+import Alert from "@mui/material/Alert";
 import { TypeAnimation } from "react-type-animation";
 
-// TODO remove, this demo shouldn't need to reset the theme.
-const TabHeader = styled("Typography")({
-  color: "aliceblue",
-  fontSize: "60px",
-  textAlign: "center",
-  paddingLeft: "80px",
-});
-
-const defaultTheme = createTheme();
-
 export default function ContactMe(props) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    // EmailJS integration — replace these with your actual EmailJS credentials:
+    // 1. Sign up free at https://www.emailjs.com
+    // 2. Create a service, template, and get your public key
+    // 3. Replace the values below
+    const SERVICE_ID = "YOUR_SERVICE_ID";
+    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+    const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      reply_to: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch(
+        `https://api.emailjs.com/api/v1.0/email/send`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            service_id: SERVICE_ID,
+            template_id: TEMPLATE_ID,
+            user_id: PUBLIC_KEY,
+            template_params: templateParams,
+          }),
+        }
+      );
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ firstName: "", lastName: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
+  const fieldSx = {
+    "& .MuiOutlinedInput-root": {
+      color: "white",
+      "& fieldset": { borderColor: "rgba(255,255,255,0.2)" },
+      "&:hover fieldset": { borderColor: "#53b374" },
+      "&.Mui-focused fieldset": { borderColor: "#53b374" },
+    },
+    "& .MuiInputLabel-root": { color: "rgba(255,255,255,0.5)" },
+    "& .MuiInputLabel-root.Mui-focused": { color: "#53b374" },
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <div ref={props.contactRef}>
-        <Box sx={{ padding: "20px" }}>
-          <Box sx={{ backgroundColor: "#151619", paddingBottom: " 40px" }}>
-            <Box
+    <div ref={props.contactRef}>
+      <Box sx={{ padding: "20px" }}>
+        <Box
+          sx={{
+            backgroundColor: "#151619",
+            paddingBottom: "40px",
+            borderRadius: "20px",
+          }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <TypeAnimation
+              sequence={["Get in touch."]}
+              wrapper="span"
+              speed={50}
+              cursor={false}
+              style={{ fontSize: "2em", display: "inline-block" }}
+            />
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "center", px: "20px" }}>
+            <Card
               sx={{
-                display: "flex",
-                justifyContent: "center",
+                width: "100%",
+                maxWidth: 600,
+                borderRadius: "20px",
+                backgroundColor: "#1e2228",
+                border: "1px solid rgba(255,255,255,0.08)",
               }}
             >
-              <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed out once, initially
-                  "Get in touch.",
-                ]}
-                wrapper="span"
-                speed={50}
-                cursor={false}
-                style={{ fontSize: "2em", display: "inline-block" }}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginLeft: "30px",
-              }}
-            >
-              <Card
-                sx={{
-                  width: "80%",
-                  borderRadius: "20px",
-                  backgroundColor: "#53565c",
-                }}
-              >
-                <Container component="main" maxWidth="xs">
-                  <CssBaseline />
-                  <Box
-                    sx={{
-                      marginTop: 8,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
+              <Container component="main" maxWidth="sm">
+                <Box
+                  sx={{
+                    mt: 4,
+                    mb: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <EmailIcon sx={{ fontSize: 40, color: "#53b374", mb: 1 }} />
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    sx={{ color: "white", mb: 1 }}
                   >
-                    <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                      <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography
-                      component="h1"
-                      variant="h5"
-                      sx={{ color: "white" }}
+                    Send me a message
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255,255,255,0.4)", mb: 3 }}
+                  >
+                    pranavkalra30@icloud.com
+                  </Typography>
+
+                  {status === "success" && (
+                    <Alert
+                      icon={<CheckCircleIcon />}
+                      severity="success"
+                      sx={{ width: "100%", mb: 2, borderRadius: "10px" }}
                     >
-                      Send me a message
-                    </Typography>
-                    <Box
-                      component="form"
-                      noValidate
-                      onSubmit={handleSubmit}
-                      sx={{ mt: 3 }}
+                      Message sent! I'll get back to you soon.
+                    </Alert>
+                  )}
+                  {status === "error" && (
+                    <Alert
+                      severity="error"
+                      sx={{ width: "100%", mb: 2, borderRadius: "10px" }}
                     >
-                      <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            autoComplete="given-name"
-                            name="firstName"
-                            required
-                            fullWidth
-                            id="firstName"
-                            label="First Name"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            required
-                            fullWidth
-                            id="lastName"
-                            label="Last Name"
-                            name="lastName"
-                            autoComplete="family-name"
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
-                          />
-                        </Grid>
-                        <Grid item xs={12} container>
-                          <TextField
-                            required
-                            fullWidth
-                            name="message"
-                            label="Message"
-                            type="message"
-                            id="message"
-                          />
-                        </Grid>
+                      Something went wrong. Please email me directly.
+                    </Alert>
+                  )}
+
+                  <Box
+                    component="form"
+                    noValidate
+                    onSubmit={handleSubmit}
+                    sx={{ width: "100%" }}
+                  >
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          name="firstName"
+                          required
+                          fullWidth
+                          label="First Name"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          sx={fieldSx}
+                        />
                       </Grid>
-                      <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                      >
-                        Send
-                      </Button>
-                    </Box>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          required
+                          fullWidth
+                          label="Last Name"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          sx={fieldSx}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          required
+                          fullWidth
+                          label="Email Address"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          sx={fieldSx}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          required
+                          fullWidth
+                          name="message"
+                          label="Message"
+                          multiline
+                          rows={4}
+                          value={formData.message}
+                          onChange={handleChange}
+                          sx={fieldSx}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      disabled={status === "sending"}
+                      endIcon={
+                        status === "sending" ? (
+                          <CircularProgress size={18} color="inherit" />
+                        ) : (
+                          <SendIcon />
+                        )
+                      }
+                      sx={{
+                        mt: 3,
+                        mb: 2,
+                        backgroundColor: "#53b374",
+                        color: "#000",
+                        fontWeight: 700,
+                        borderRadius: "10px",
+                        py: 1.5,
+                        textTransform: "none",
+                        fontSize: "16px",
+                        "&:hover": { backgroundColor: "#3d9a5a" },
+                        "&:disabled": { backgroundColor: "#2a5e3a" },
+                      }}
+                    >
+                      {status === "sending" ? "Sending..." : "Send Message"}
+                    </Button>
                   </Box>
-                </Container>
-              </Card>
-            </Box>
+                </Box>
+              </Container>
+            </Card>
           </Box>
         </Box>
-      </div>
-    </ThemeProvider>
+      </Box>
+    </div>
   );
 }

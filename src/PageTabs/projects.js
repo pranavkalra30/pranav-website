@@ -3,22 +3,13 @@ import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
-import { styled } from "@mui/system";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-
-const PlaceholderCard = lazy(() => import("../Components/PlaceholderCard"));
 
 const MediaCard = lazy(() => import("../Components/projectCard"));
 const XpressphoneCard = lazy(() =>
   import("../Components/projectCardXpressphone")
 );
-
-const TabHeader = styled("Typography")({
-  color: "aliceblue",
-
-  textAlign: "center",
-});
 
 const Projects = (props) => {
   return (
@@ -27,39 +18,31 @@ const Projects = (props) => {
         <Box
           sx={{
             backgroundColor: "#151619",
-            paddingBottom: " 40px",
+            paddingBottom: "40px",
             borderRadius: "20px",
           }}
         >
           <Grow in={true}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
               <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed out once, initially
-                  "Projects I have worked on.",
-                ]}
+                sequence={["Projects I have worked on."]}
                 wrapper="span"
                 speed={50}
                 cursor={false}
                 style={{ fontSize: "2em", display: "inline-block" }}
               />
-
-              {/* <ProjectsAnimationFile /> */}
             </Box>
           </Grow>
           <br />
 
           <Box
-            style={{
+            sx={{
               display: "flex",
               flexDirection: props.isMobile ? "column" : "row",
-              justifyContent: props.isMobile ? "center" : "space-evenly",
-              alignItems: props.isMobile && "center",
+              justifyContent: "center",
+              alignItems: props.isMobile ? "center" : "stretch",
+              gap: "32px",
+              padding: "0 40px",
             }}
           >
             <Slide direction="up" in={true}>
@@ -68,15 +51,11 @@ const Projects = (props) => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                     transition={{
                       duration: 0.4,
-                      scale: {
-                        type: "spring",
-                        visualDuration: 0.4,
-                        bounce: 0.5,
-                      },
+                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
                     }}
                   >
                     <MediaCard
@@ -87,92 +66,21 @@ const Projects = (props) => {
                 </Suspense>
               </Box>
             </Slide>
-            {props.isMobile && <br />}
-            {props.isMobile && <br />}
-            {props.isMobile && <br />}
+
             <Slide direction="up" in={true}>
               <Box>
                 <Suspense fallback={<div />}>
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                     transition={{
                       duration: 0.4,
-                      scale: {
-                        type: "spring",
-                        visualDuration: 0.4,
-                        bounce: 0.5,
-                      },
+                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
                     }}
                   >
                     <XpressphoneCard
-                      isMobile={props.isMobile}
-                      deviceWidth={props.deviceWidth}
-                    />
-                  </motion.div>
-                </Suspense>
-              </Box>
-            </Slide>
-          </Box>
-          <br />
-          <br />
-          <br />
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: props.isMobile ? "column" : "row",
-              justifyContent: props.isMobile ? "center" : "space-evenly",
-              alignItems: props.isMobile && "center",
-            }}
-          >
-            <Slide direction="up" in={true}>
-              <Box>
-                <Suspense fallback={<div />}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
-                    transition={{
-                      duration: 0.4,
-                      scale: {
-                        type: "spring",
-                        visualDuration: 0.4,
-                        bounce: 0.5,
-                      },
-                    }}
-                  >
-                    <PlaceholderCard
-                      isMobile={props.isMobile}
-                      deviceWidth={props.deviceWidth}
-                    />
-                  </motion.div>
-                </Suspense>
-              </Box>
-            </Slide>
-            {props.isMobile && <br />}
-            {props.isMobile && <br />}
-            {props.isMobile && <br />}
-            <Slide direction="up" in={true}>
-              <Box>
-                <Suspense fallback={<div />}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
-                    transition={{
-                      duration: 0.4,
-                      scale: {
-                        type: "spring",
-                        visualDuration: 0.4,
-                        bounce: 0.5,
-                      },
-                    }}
-                  >
-                    <PlaceholderCard
                       isMobile={props.isMobile}
                       deviceWidth={props.deviceWidth}
                     />
