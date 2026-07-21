@@ -5,31 +5,16 @@ import Slide from "@mui/material/Slide";
 import { Suspense, lazy } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import ModoMubiImage from "../Images/TheMovieSearch.png";
-import XpressphoneImage from "../Images/Xpressphone.png";
 
-const ProjectCard = lazy(() => import("../Components/analyticsProjectCard"));
+const MediaCard = lazy(() => import("../Components/projectCard"));
+const XpressphoneCard = lazy(() =>
+  import("../Components/projectCardXpressphone")
+);
+const AnalyticsProjectCard = lazy(() =>
+  import("../Components/analyticsProjectCard")
+);
 
-const projects = [
-  {
-    title: "ModoMubi",
-    tags: ["Web Development", "Web Design", "ReactJS"],
-    description:
-      "A movie discovery web app for searching titles and browsing details, built with a focus on clean UI and fast search.",
-    accent: "#4da6e8",
-    image: ModoMubiImage,
-    path: "/projects/modomubi",
-  },
-  {
-    title: "Xpressphone",
-    tags: ["Full-Stack", "Node.js", "Azure"],
-    description:
-      "Full-stack web application built during my time at Xpressphone, with API-driven backend services deployed on Azure.",
-    accent: "#e8934d",
-    image: XpressphoneImage,
-    path: "/projects/xpressphone",
-  },
+const analyticsProjects = [
   {
     title: "Retail Demand Forecasting",
     tags: ["ML Engineering", "Time Series", "Python"],
@@ -54,8 +39,6 @@ const projects = [
 ];
 
 const Projects = (props) => {
-  const navigate = useNavigate();
-
   return (
     <div ref={props.projectsRef}>
       <Box sx={{ padding: "20px" }}>
@@ -90,7 +73,51 @@ const Projects = (props) => {
               padding: "0 40px",
             }}
           >
-            {projects.map((project) => (
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
+                    }}
+                  >
+                    <MediaCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
+                  </motion.div>
+                </Suspense>
+              </Box>
+            </Slide>
+
+            <Slide direction="up" in={true}>
+              <Box>
+                <Suspense fallback={<div />}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{
+                      duration: 0.4,
+                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
+                    }}
+                  >
+                    <XpressphoneCard
+                      isMobile={props.isMobile}
+                      deviceWidth={props.deviceWidth}
+                    />
+                  </motion.div>
+                </Suspense>
+              </Box>
+            </Slide>
+
+            {analyticsProjects.map((project) => (
               <Slide direction="up" in={true} key={project.title}>
                 <Box sx={{ width: props.isMobile ? "auto" : "340px" }}>
                   <Suspense fallback={<div />}>
@@ -101,25 +128,12 @@ const Projects = (props) => {
                       whileTap={{ scale: 0.97 }}
                       transition={{
                         duration: 0.4,
-                        scale: {
-                          type: "spring",
-                          visualDuration: 0.4,
-                          bounce: 0.3,
-                        },
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
                       }}
                       style={{ height: "100%" }}
                     >
-                      <ProjectCard
-                        title={project.title}
-                        tags={project.tags}
-                        description={project.description}
-                        accent={project.accent}
-                        image={project.image}
-                        onClick={
-                          project.path
-                            ? () => navigate(project.path)
-                            : undefined
-                        }
+                      <AnalyticsProjectCard
+                        {...project}
                         isMobile={props.isMobile}
                         deviceWidth={props.deviceWidth}
                       />

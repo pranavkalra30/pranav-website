@@ -1,12 +1,8 @@
 {
-    "data":{
-       "1":{
-          "title":"Expertise",
-          "details":"My main areas of expertise include Javascript, Typescript, Node.js, HTML, CSS, php and Python."
-       },
-       "2":{
-          "title":"Expertise",
-          "details":"My main areas of expertise include Javascript, Typescript, Node.js, HTML, CSS, php and Python."
-       }
+  "data": {
+    "1": {
+      "title": "Expertise",
+      "details": "Core strengths in Python, SQL, machine learning, and time series forecasting, with a full-stack background in JavaScript, TypeScript, Node.js, and React."
     }
- }
+  }
+}

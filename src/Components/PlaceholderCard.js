@@ -23,11 +23,12 @@ export default function MediaCard(props) {
         backgroundColor: "#53565c",
         borderRadius: "30px",
         cursor: "pointer",
-        width: props.isMobile ? props.deviceWidth * 0.8 : "100%",
+        width: props.isMobile ? "min(85vw, 400px)" : "100%",
+        maxWidth: 500,
       }}
     >
       <CardMedia
-        sx={{ height: 240, width: 500, borderRadius: "30px, 30px, 0px, 0px" }}
+        sx={{ height: 240, width: "100%", borderRadius: "30px 30px 0 0" }}
         image={Placeholder}
         title="Movies"
       />

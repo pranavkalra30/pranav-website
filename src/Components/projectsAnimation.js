@@ -12,7 +12,7 @@ function ProjectsAnimationFile() {
 
   return (
     <div>
-      <div id="projects-animation" style={{ width: 400, height: 400 }} />
+      <div id="projects-animation" style={{ width: "min(400px, 85vw)", height: "min(400px, 85vw)" }} />
     </div>
   );
 }

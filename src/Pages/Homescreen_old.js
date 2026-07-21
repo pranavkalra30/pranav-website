@@ -2,7 +2,6 @@ import "../App.css";
 import AboutMe from "../PageTabs/aboutMe.js";
 import React, { useEffect } from "react";
 import Projects from "../PageTabs/projects";
-import Education from "../PageTabs/education";
 import WorkExperience from "../PageTabs/workExperience";
 import Box from "@mui/material/Box";
 import PrimaryAppBar from "../Components/appbar.js";
@@ -25,8 +24,6 @@ function Homescreen(props) {
       />
 
       <AboutMe />
-
-      <Education />
 
       <WorkExperience />
 

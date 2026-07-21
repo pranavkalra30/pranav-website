@@ -9,8 +9,27 @@ import { motion } from "framer-motion";
 
 const jobs = [
   {
-    title: "Short-term Rental Property Manager",
-    company: "Self-Employed (Freelance)",
+    title: "Data Analytics Graduate Consultant – Capstone Project ",
+    company: "Club Piscine",
+    location: "Toronto, ON",
+    period: "Sept 2025 – June 2026",
+    color: "#09130e",
+    accent: "#c82e7b",
+    bullets: [
+      "Architected and deployed an end-to-end weekly demand forecasting pipeline using Python, LightGBM, and FastAPI, presenting insights and product demonstrations directly to client stakeholders.",
+      "Implemented Agentic AI-assisted development workflows to accelerate code generation, optimize complex SQL queries, and implement automated data quality testing.",
+    ],
+    tags: [
+      "Python",
+      "Prophet",
+      "Time-Series Forecasting",
+      "FastAPI",
+      "LightGBM",
+    ],
+  },
+  {
+    title: "Independent Property Portfolio Manager",
+    company: "Self-Employed",
     location: "Toronto, ON",
     period: "Feb 2022 – Present",
     color: "#1a3a2a",
@@ -102,7 +121,10 @@ const JobCard = ({ job, index }) => {
               >
                 {job.company}
               </Typography>
-              <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.45)", mt: 0.3 }}>
+              <Typography
+                variant="body2"
+                sx={{ color: "rgba(255,255,255,0.45)", mt: 0.3 }}
+              >
                 {job.location}
               </Typography>
             </Box>
@@ -121,7 +143,10 @@ const JobCard = ({ job, index }) => {
           {/* Expandable bullets */}
           <motion.div
             initial={false}
-            animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
+            animate={{
+              height: expanded ? "auto" : 0,
+              opacity: expanded ? 1 : 0,
+            }}
             transition={{ duration: 0.3 }}
             style={{ overflow: "hidden" }}
           >
@@ -131,7 +156,11 @@ const JobCard = ({ job, index }) => {
                   component="li"
                   key={i}
                   variant="body2"
-                  sx={{ color: "rgba(255,255,255,0.75)", mb: 0.8, lineHeight: 1.7 }}
+                  sx={{
+                    color: "rgba(255,255,255,0.75)",
+                    mb: 0.8,
+                    lineHeight: 1.7,
+                  }}
                 >
                   {b}
                 </Typography>
@@ -139,7 +168,14 @@ const JobCard = ({ job, index }) => {
             </Box>
           </motion.div>
 
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.8, mt: expanded ? 1 : 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 0.8,
+              mt: expanded ? 1 : 2,
+            }}
+          >
             {job.tags.map((tag) => (
               <Chip
                 key={tag}

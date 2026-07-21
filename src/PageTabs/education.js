@@ -1,47 +1,149 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { TypeAnimation } from "react-type-animation";
-import BooksAnimationFile from "../Animations/BooksAnimation";
 import Box from "@mui/material/Box";
-import TimelineObserver from "react-timeline-animation";
-import EducationTimeline from "../Components/educationTimeline";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import SchoolIcon from "@mui/icons-material/School";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import { motion } from "framer-motion";
 
-const onCallback = () => {
-  console.log("timeline triggered");
-};
+const ACCENT = "#53b374";
+
+const milestones = [
+  {
+    year: "2013",
+    title: "Electrical Engineering",
+    detail: "Started my Bachelor's at Toronto Metropolitan University.",
+    icon: <LocalLibraryIcon />,
+  },
+  {
+    year: "2017",
+    title: "Graduated with Distinction",
+    detail: "Bachelor's in Electrical Engineering. Dean's List, cGPA 85%+.",
+    icon: <SchoolIcon />,
+  },
+  {
+    year: "2018",
+    title: "Into Industry",
+    detail: "Frontend Developer at Tata Consultancy Services.",
+    icon: <LaptopMacIcon />,
+  },
+  {
+    year: "2025 – 26",
+    title: "McGill MMA",
+    detail:
+      "Master of Management Analytics, McGill University. $10,000 Entrance Scholarship.",
+    icon: <AutoAwesomeIcon />,
+  },
+];
 
 const Education = () => {
   return (
     <div>
-      <Typography variant="h5" sx={{ color: "white", pt: 4, pb: 2 }}>
-        How my journey into software development began
-      </Typography>
+      <Box sx={{ padding: "20px" }}>
+        <Box
+          sx={{
+            backgroundColor: "#151619",
+            borderRadius: "20px",
+            padding: "40px 20px 56px",
+          }}
+        >
+          <Typography variant="h5" sx={{ color: "white", pb: 5 }}>
+            My journey from engineering to analytics
+          </Typography>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          alignItems: "flex-start",
-          padding: "40px 20px",
-          gap: "40px",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", pt: 6 }}>
-          <BooksAnimationFile />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: { xs: "center", md: "stretch" },
+              justifyContent: "center",
+              padding: "0 24px",
+            }}
+          >
+            {milestones.map((milestone, index) => (
+              <React.Fragment key={milestone.year}>
+                {index > 0 && (
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.8 }}
+                    transition={{ duration: 0.4, delay: index * 0.25 }}
+                    style={{ alignSelf: "center" }}
+                  >
+                    <Box
+                      sx={{
+                        width: { xs: "3px", md: "56px" },
+                        height: { xs: "40px", md: "3px" },
+                        backgroundColor: ACCENT,
+                        borderRadius: "2px",
+                        flexShrink: 0,
+                      }}
+                    />
+                  </motion.div>
+                )}
+
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: index * 0.25 }}
+                  style={{ display: "flex" }}
+                >
+                  <Card
+                    sx={{
+                      backgroundColor: "#53565c",
+                      borderRadius: "24px",
+                      width: { xs: "min(320px, 85vw)", md: "230px" },
+                      display: "flex",
+                      flexDirection: "column",
+                      transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                      "&:hover": {
+                        transform: "translateY(-6px)",
+                        boxShadow: "0 12px 24px rgba(83, 179, 116, 0.25)",
+                      },
+                    }}
+                  >
+                    <CardContent sx={{ textAlign: "left", pt: 3 }}>
+                      <Box
+                        sx={{
+                          width: 44,
+                          height: 44,
+                          borderRadius: "50%",
+                          backgroundColor: "#1e3a5f",
+                          color: "#7ec8e3",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          mb: 2,
+                        }}
+                      >
+                        {milestone.icon}
+                      </Box>
+                      <Typography
+                        variant="h4"
+                        sx={{ color: ACCENT, fontWeight: 700, lineHeight: 1 }}
+                      >
+                        {milestone.year}
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "white", fontWeight: 600, mt: 1 }}
+                      >
+                        {milestone.title}
+                      </Typography>
+                      <Typography variant="body2" sx={{ color: "#c9cccf", mt: 0.5 }}>
+                        {milestone.detail}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </React.Fragment>
+            ))}
+          </Box>
         </Box>
-
-        <TimelineObserver
-          initialColor="#e5e5e5"
-          fillColor="#53b374"
-          handleObserve={(setObserver) => (
-            <EducationTimeline
-              callback={onCallback}
-              className="timeline"
-              setObserver={setObserver}
-            />
-          )}
-        />
       </Box>
     </div>
   );

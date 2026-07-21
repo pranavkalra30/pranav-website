@@ -13,16 +13,16 @@ import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 
 const skills = [
-  "Python",
-  "SQL",
-  "Machine Learning",
-  "Time Series Forecasting",
-  "Azure",
-  "AWS",
   "ReactJS",
   "TypeScript",
   "Node.js",
+  "Python",
+  "SQL",
+  "Azure",
+  "AWS",
+  "HTML/CSS",
   "Excel",
+  "Machine Learning",
 ];
 
 const AboutMe = () => {
@@ -70,7 +70,7 @@ const AboutMe = () => {
                   variant="subtitle1"
                   sx={{ color: "#53b374", fontWeight: 600, mb: 2 }}
                 >
-                  Analytics & Machine Learning | McGill MMA Candidate | Full-Stack Developer
+                  Full-Stack Developer & Analytics Graduate Student
                 </Typography>
                 <Card
                   sx={{

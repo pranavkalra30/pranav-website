@@ -101,11 +101,7 @@ const Projects = (props) => {
                       whileTap={{ scale: 0.97 }}
                       transition={{
                         duration: 0.4,
-                        scale: {
-                          type: "spring",
-                          visualDuration: 0.4,
-                          bounce: 0.3,
-                        },
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
                       }}
                       style={{ height: "100%" }}
                     >
@@ -116,9 +112,7 @@ const Projects = (props) => {
                         accent={project.accent}
                         image={project.image}
                         onClick={
-                          project.path
-                            ? () => navigate(project.path)
-                            : undefined
+                          project.path ? () => navigate(project.path) : undefined
                         }
                         isMobile={props.isMobile}
                         deviceWidth={props.deviceWidth}

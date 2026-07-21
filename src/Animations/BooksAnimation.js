@@ -26,7 +26,7 @@ class BooksAnimationFile extends React.Component {
           id="educationLottie"
           mode="normal"
           src="https://assets5.lottiefiles.com/packages/lf20_1a8dx7zj.json"
-          style={{ width: "420px" }}
+          style={{ width: "min(420px, 85vw)" }}
         ></lottie-player>
       </div>
     );
