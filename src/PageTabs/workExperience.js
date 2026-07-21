@@ -212,13 +212,12 @@ const WorkExperience = () => {
           padding: "20px 30px 40px",
         }}
       >
-        <TypeAnimation
-          sequence={["Work experience."]}
-          wrapper="span"
-          speed={50}
-          cursor={false}
-          style={{ fontSize: "2em", display: "inline-block" }}
-        />
+        <Typography
+          variant="h4"
+          sx={{ color: "white", fontWeight: 700, mb: 1 }}
+        >
+          Work Experience
+        </Typography>
 
         <Box
           sx={{

@@ -26,8 +26,9 @@ const milestones = [
   },
   {
     year: "2018",
-    title: "Into Industry",
-    detail: "Frontend Developer at Tata Consultancy Services.",
+    title: "Frontend and Full-Stack Development",
+    detail:
+      "Software Developer at Tata Consultancy Services and startup, Xpressphone.",
     icon: <LaptopMacIcon />,
   },
   {
@@ -50,8 +51,11 @@ const Education = () => {
             padding: "40px 20px 56px",
           }}
         >
-          <Typography variant="h5" sx={{ color: "white", pb: 5 }}>
-            My journey from engineering to analytics
+          <Typography
+            variant="h4"
+            sx={{ color: "white", fontWeight: 700, mb: 1 }}
+          >
+            My journey into Analytics & Machine Learning
           </Typography>
 
           <Box
@@ -134,7 +138,10 @@ const Education = () => {
                       >
                         {milestone.title}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: "#c9cccf", mt: 0.5 }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "#c9cccf", mt: 0.5 }}
+                      >
                         {milestone.detail}
                       </Typography>
                     </CardContent>

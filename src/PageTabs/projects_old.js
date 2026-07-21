@@ -7,8 +7,8 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
 const MediaCard = lazy(() => import("../Components/projectCard"));
-const XpressphoneCard = lazy(() =>
-  import("../Components/projectCardXpressphone")
+const XpressphoneCard = lazy(
+  () => import("../Components/projectCardXpressphone"),
 );
 
 const Projects = (props) => {
@@ -24,13 +24,12 @@ const Projects = (props) => {
         >
           <Grow in={true}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <TypeAnimation
-                sequence={["Projects I have worked on."]}
-                wrapper="span"
-                speed={50}
-                cursor={false}
-                style={{ fontSize: "2em", display: "inline-block" }}
-              />
+              <Typography
+                variant="h4"
+                sx={{ color: "white", fontWeight: 700, mb: 1 }}
+              >
+                Projects I have worked on
+              </Typography>
             </Box>
           </Grow>
           <br />
@@ -55,7 +54,11 @@ const Projects = (props) => {
                     whileTap={{ scale: 0.97 }}
                     transition={{
                       duration: 0.4,
-                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.3,
+                      },
                     }}
                   >
                     <MediaCard
@@ -77,7 +80,11 @@ const Projects = (props) => {
                     whileTap={{ scale: 0.97 }}
                     transition={{
                       duration: 0.4,
-                      scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
+                      scale: {
+                        type: "spring",
+                        visualDuration: 0.4,
+                        bounce: 0.3,
+                      },
                     }}
                   >
                     <XpressphoneCard

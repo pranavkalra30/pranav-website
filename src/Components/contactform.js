@@ -57,7 +57,7 @@ export default function ContactMe(props) {
             user_id: PUBLIC_KEY,
             template_params: templateParams,
           }),
-        }
+        },
       );
       if (response.ok) {
         setStatus("success");
@@ -92,13 +92,12 @@ export default function ContactMe(props) {
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <TypeAnimation
-              sequence={["Get in touch."]}
-              wrapper="span"
-              speed={50}
-              cursor={false}
-              style={{ fontSize: "2em", display: "inline-block" }}
-            />
+            <Typography
+              variant="h4"
+              sx={{ color: "white", fontWeight: 700, mb: 1 }}
+            >
+              Get in touch
+            </Typography>
           </Box>
 
           <Box sx={{ display: "flex", justifyContent: "center", px: "20px" }}>

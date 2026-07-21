@@ -36,14 +36,6 @@ const AboutMe = () => {
             borderRadius: "20px",
           }}
         >
-          <TypeAnimation
-            sequence={["About me."]}
-            wrapper="span"
-            speed={50}
-            cursor={false}
-            style={{ fontSize: "2em", display: "inline-block" }}
-          />
-
           <Box
             sx={{
               display: "flex",
@@ -64,13 +56,14 @@ const AboutMe = () => {
                   variant="h4"
                   sx={{ color: "white", fontWeight: 700, mb: 1 }}
                 >
-                  Pranav Kalra
+                  Hi, I am Pranav Kalra!
                 </Typography>
                 <Typography
                   variant="subtitle1"
                   sx={{ color: "#53b374", fontWeight: 600, mb: 2 }}
                 >
-                  Analytics & Machine Learning | McGill MMA Candidate | Full-Stack Developer
+                  Analytics & Machine Learning | McGill MMA | Full-Stack
+                  Developer
                 </Typography>
                 <Card
                   sx={{
