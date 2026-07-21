@@ -46,14 +46,19 @@ export default function MobileDrawer() {
         aria-label="open menu"
         onClick={() => setOpen(true)}
       >
-        <MenuIcon sx={{ color: "white", fontSize: "2em" }} />
+        <MenuIcon sx={{ color: "grey", fontSize: "2em" }} />
       </IconButton>
 
       <Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          "& .MuiDrawer-paper": { width: drawerWidth },
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            background: "transparent",
+            backdropFilter: "blur(20px)",
+            boxShadow: "0 1px 0 rgba(255,255,255,0.08)",
+          },
         }}
         anchor="right"
         open={open}
@@ -67,7 +72,7 @@ export default function MobileDrawer() {
           }}
         >
           <IconButton onClick={() => setOpen(false)}>
-            <CloseIcon />
+            <CloseIcon sx={{ color: "white" }} />
           </IconButton>
         </Box>
         <Divider />
@@ -75,10 +80,12 @@ export default function MobileDrawer() {
           {links.map(({ label, icon, url }) => (
             <ListItem key={label} disablePadding>
               <ListItemButton
-                onClick={() => window.open(url, "_blank", "noopener,noreferrer")}
+                onClick={() =>
+                  window.open(url, "_blank", "noopener,noreferrer")
+                }
               >
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={label} />
+                <ListItemIcon sx={{ color: "white" }}>{icon}</ListItemIcon>
+                <ListItemText primary={label} sx={{ color: "white" }} />
               </ListItemButton>
             </ListItem>
           ))}
