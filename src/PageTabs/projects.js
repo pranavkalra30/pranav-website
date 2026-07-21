@@ -87,12 +87,17 @@ const Projects = (props) => {
               justifyContent: "center",
               alignItems: props.isMobile ? "center" : "stretch",
               gap: "32px",
-              padding: "0 40px",
+              padding: { xs: "0 12px", md: "0 40px" },
             }}
           >
             {projects.map((project) => (
               <Slide direction="up" in={true} key={project.title}>
-                <Box sx={{ width: props.isMobile ? "auto" : "340px" }}>
+                <Box
+                  sx={{
+                    width: props.isMobile ? "100%" : "340px",
+                    maxWidth: props.isMobile ? 400 : "none",
+                  }}
+                >
                   <Suspense fallback={<div />}>
                     <motion.div
                       initial={{ opacity: 0, scale: 0 }}
@@ -101,11 +106,7 @@ const Projects = (props) => {
                       whileTap={{ scale: 0.97 }}
                       transition={{
                         duration: 0.4,
-                        scale: {
-                          type: "spring",
-                          visualDuration: 0.4,
-                          bounce: 0.3,
-                        },
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 },
                       }}
                       style={{ height: "100%" }}
                     >
@@ -116,9 +117,7 @@ const Projects = (props) => {
                         accent={project.accent}
                         image={project.image}
                         onClick={
-                          project.path
-                            ? () => navigate(project.path)
-                            : undefined
+                          project.path ? () => navigate(project.path) : undefined
                         }
                         isMobile={props.isMobile}
                         deviceWidth={props.deviceWidth}

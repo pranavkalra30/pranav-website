@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
       sx={{
         backgroundColor: "#53565c",
         borderRadius: "30px",
-        width: props.isMobile ? "min(85vw, 400px)" : "100%",
+        width: "100%",
         maxWidth: 500,
         height: "100%",
         display: "flex",
