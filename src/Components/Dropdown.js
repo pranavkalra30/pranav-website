@@ -52,6 +52,7 @@ export default function MobileDrawer() {
       <Drawer
         sx={{
           width: drawerWidth,
+          disableScrollLock,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
