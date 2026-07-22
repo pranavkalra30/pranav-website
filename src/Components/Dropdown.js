@@ -50,7 +50,7 @@ export default function MobileDrawer() {
       </IconButton>
 
       <Drawer
-        disableScrollLock
+        disableScrollLock={true}
         sx={{
           width: drawerWidth,
           flexShrink: 0,
