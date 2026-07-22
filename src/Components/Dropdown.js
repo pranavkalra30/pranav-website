@@ -50,9 +50,9 @@ export default function MobileDrawer() {
       </IconButton>
 
       <Drawer
+        disableScrollLock
         sx={{
           width: drawerWidth,
-          disableScrollLock,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
