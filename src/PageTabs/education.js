@@ -79,7 +79,7 @@ const Education = () => {
                   >
                     <Box
                       sx={{
-                        width: { xs: "3px", md: "56px" },
+                        width: { xs: "3px", md: "3vw" },
                         height: { xs: "40px", md: "3px" },
                         backgroundColor: ACCENT,
                         borderRadius: "2px",
@@ -100,7 +100,7 @@ const Education = () => {
                     sx={{
                       backgroundColor: "#53565c",
                       borderRadius: "24px",
-                      width: { xs: "min(320px, 85vw)", md: "230px" },
+                      width: { xs: "min(320px, 85vw)", md: "20vw" },
                       display: "flex",
                       flexDirection: "column",
                       transition: "transform 0.2s ease, box-shadow 0.2s ease",
