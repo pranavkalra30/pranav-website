@@ -132,7 +132,7 @@ export default function ContactMe(props) {
                     variant="body2"
                     sx={{ color: "rgba(255,255,255,0.4)", mb: 3 }}
                   >
-                    pranavkalra30@icloud.com
+                    email@pranavkalra.ca
                   </Typography>
 
                   {status === "success" && (

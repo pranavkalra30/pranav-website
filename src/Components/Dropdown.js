@@ -32,7 +32,7 @@ const links = [
   {
     label: "Send an Email",
     icon: <MailIcon />,
-    url: "mailto:pranavkalra30@icloud.com",
+    url: "mailto:email@pranavkalra.ca",
   },
 ];
 
