@@ -4,6 +4,7 @@ import React from "react";
 import Homescreen from "./Pages/Homescreen";
 import XpressphonePage from "./Pages/XpressphonePage";
 import ModoMubiPage from "./Pages/ModoMubiPage";
+import RetailForecastingPage from "./Pages/RetailForecastingPage";
 import UnderConstruction from "./Pages/UnderConstruction.js";
 import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
@@ -62,6 +63,17 @@ function App() {
           path="/projects/modomubi"
           element={
             <ModoMubiPage
+              scrollToTop={scrollToTop}
+              isMobile={isMobile}
+              deviceWidth={deviceWidth}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/projects/retail-demand-forecasting"
+          element={
+            <RetailForecastingPage
               scrollToTop={scrollToTop}
               isMobile={isMobile}
               deviceWidth={deviceWidth}

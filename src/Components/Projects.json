@@ -12,7 +12,8 @@
     },
     "3": {
       "title": "Retail Demand Forecasting",
-      "details": "ML Engineering | Time Series"
+      "details": "ML Engineering | Time Series",
+      "image": "../Images/DemandForecastingImage.jpg"
     },
     "4": {
       "title": "Reddit Network Analysis",

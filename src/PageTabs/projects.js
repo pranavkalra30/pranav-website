@@ -8,11 +8,21 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ModoMubiImage from "../Images/TheMovieSearch.png";
 import XpressphoneImage from "../Images/Xpressphone.png";
+import DemandForecastingImage from "../Images/DemandForecasting.jpg";
 import Typography from "@mui/material/Typography";
 
 const ProjectCard = lazy(() => import("../Components/analyticsProjectCard"));
 
 const projects = [
+  {
+    title: "Retail Demand Forecasting",
+    tags: ["ML Engineering", "Time Series", "Python"],
+    description:
+      "MMA capstone for Club Piscine, a Quebec retail chain. Built a weekly unit-level demand forecasting pipeline to support inventory and purchasing decisions.",
+    accent: "#53b374",
+    image: DemandForecastingImage,
+    path: "/projects/retail-demand-forecasting",
+  },
   {
     title: "ModoMubi",
     tags: ["Web Development", "Web Design", "ReactJS"],
@@ -30,13 +40,6 @@ const projects = [
     accent: "#e8934d",
     image: XpressphoneImage,
     path: "/projects/xpressphone",
-  },
-  {
-    title: "Retail Demand Forecasting",
-    tags: ["ML Engineering", "Time Series", "Python"],
-    description:
-      "MMA capstone for Club Piscine, a Quebec retail chain. Built a weekly unit-level demand forecasting pipeline to support inventory and purchasing decisions.",
-    accent: "#53b374",
   },
   {
     title: "Reddit Network Analysis",
