@@ -150,7 +150,7 @@ const JobCard = ({ job, index }) => {
             transition={{ duration: 0.3 }}
             style={{ overflow: "hidden" }}
           >
-            <Box component="ul" sx={{ pl: 2, mt: 2, mb: 1 }}>
+            <Box component="ul" sx={{ pl: 2, mt: 2, mb: 1, textAlign: "left" }}>
               {job.bullets.map((b, i) => (
                 <Typography
                   component="li"
@@ -160,6 +160,7 @@ const JobCard = ({ job, index }) => {
                     color: "rgba(255,255,255,0.75)",
                     mb: 0.8,
                     lineHeight: 1.7,
+                    textAlign: "left",
                   }}
                 >
                   {b}
