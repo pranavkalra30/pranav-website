@@ -113,6 +113,13 @@ class FooterPage extends React.Component {
             <Typography sx={{ color: "#9e9e9e" }}>
               &copy; {new Date().getFullYear()} Copyright: Pranav Kalra
             </Typography>
+            <Typography
+              variant="caption"
+              sx={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Built with React, Material UI & Framer Motion · Deployed on
+              Netlify
+            </Typography>
           </MDBContainer>
         </MDBFooter>
       </div>
