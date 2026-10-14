@@ -20,8 +20,8 @@ const milestones = [
   },
   {
     year: "2017",
-    title: "Graduated with Distinction",
-    detail: "Bachelor's in Electrical Engineering. Dean's List, cGPA 85%+.",
+    title: "Graduated",
+    detail: "Bachelor's in Electrical Engineering. Dean's List.",
     icon: <SchoolIcon />,
   },
   {
@@ -32,10 +32,10 @@ const milestones = [
     icon: <LaptopMacIcon />,
   },
   {
-    year: "2026",
+    year: "2025",
     title: "McGill MMA",
     detail:
-      "Master of Management in Analytics, McGill University. Graduated Sept 2026. $10,000 Entrance Scholarship.",
+      "Master of Management in Analytics, McGill University. Graduated Sept 2026. cGPA 3.75/4.0.",
     icon: <AutoAwesomeIcon />,
   },
 ];

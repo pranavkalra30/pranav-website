@@ -15,13 +15,6 @@ const ProjectCard = lazy(() => import("../Components/analyticsProjectCard"));
 
 const projects = [
   {
-    title: "Multi-Agent Customer Service System",
-    tags: ["LLM Agents", "Python", "OpenAI Agents SDK"],
-    description:
-      "McGill project building LLM support and operations agents with the OpenAI Agents SDK, featuring tool calling and escalation handling.",
-    accent: "#d06a8a",
-  },
-  {
     title: "Retail Demand Forecasting",
     tags: ["ML Engineering", "Time Series", "Python"],
     description:
@@ -47,6 +40,13 @@ const projects = [
     accent: "#e8934d",
     image: XpressphoneImage,
     path: "/projects/xpressphone",
+  },
+  {
+    title: "Multi-Agent Customer Service System",
+    tags: ["LLM Agents", "Python", "OpenAI Agents SDK"],
+    description:
+      "McGill project building LLM support and operations agents with the OpenAI Agents SDK, featuring tool calling and escalation handling.",
+    accent: "#d06a8a",
   },
   {
     title: "Reddit Network Analysis",
