@@ -11,13 +11,12 @@ import XpressphoneWide from "../Images/XpressphoneWide.png";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const tags = ["ReactJS", "Node.js", "Azure", "AWS", "REST APIs", "TypeScript"];
+const tags = ["ReactJS", "JavaScript", "TypeScript", "Frontend"];
 
 const bullets = [
-  "Designed and deployed full-stack and cloud-based applications leveraging ReactJS, Node.js, and Azure/AWS.",
-  "Developed and optimized API-driven backend services to enhance reliability and performance.",
-  "Migrated legacy systems to Azure cloud, reducing latency and improving efficiency by 30%.",
-  "Collaborated with designers and stakeholders to ensure consistent UX and accessibility compliance.",
+  "Built frontend features for the company website in ReactJS, working closely with designers on layout and user experience.",
+  "Helped deploy the company website and supported it through launch.",
+  "Collaborated with stakeholders to ship updates and keep the site consistent and accessible.",
 ];
 
 function XpressphonePage(props) {

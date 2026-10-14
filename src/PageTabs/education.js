@@ -32,10 +32,10 @@ const milestones = [
     icon: <LaptopMacIcon />,
   },
   {
-    year: "2025 – 26",
+    year: "2026",
     title: "McGill MMA",
     detail:
-      "Master of Management Analytics, McGill University. $10,000 Entrance Scholarship.",
+      "Master of Management in Analytics, McGill University. Graduated Sept 2026. $10,000 Entrance Scholarship.",
     icon: <AutoAwesomeIcon />,
   },
 ];

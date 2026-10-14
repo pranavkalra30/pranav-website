@@ -11,7 +11,7 @@ const jobs = [
   {
     title: "Data Analytics Graduate Consultant – Capstone Project ",
     company: "Club Piscine",
-    location: "Toronto, ON",
+    location: "Remote",
     period: "Sept 2025 – June 2026",
     color: "#09130e",
     accent: "#c82e7b",
@@ -48,12 +48,11 @@ const jobs = [
     color: "#0d2a45",
     accent: "#4da6e8",
     bullets: [
-      "Designed and deployed full-stack applications using ReactJS, Node.js, and Azure/AWS.",
-      "Developed and optimized API-driven backend services to enhance reliability and performance.",
-      "Migrated legacy systems to Azure cloud, reducing latency and improving efficiency by 30%.",
-      "Collaborated with designers and stakeholders to ensure consistent UX and accessibility compliance.",
+      "Built frontend features for the company website in ReactJS, working closely with designers on layout and user experience.",
+      "Helped deploy the company website and supported it through launch.",
+      "Collaborated with stakeholders to ship updates and keep the site consistent and accessible.",
     ],
-    tags: ["ReactJS", "Node.js", "Azure", "AWS", "REST APIs"],
+    tags: ["ReactJS", "JavaScript", "Frontend"],
   },
   {
     title: "Frontend Developer",
@@ -65,10 +64,10 @@ const jobs = [
     bullets: [
       "Built and maintained secure financial web and mobile applications using ReactJS and TypeScript.",
       "Developed reusable components and implemented responsive design aligned with accessibility standards.",
-      "Partnered with backend and DevOps teams to ensure scalable integrations with cloud-based APIs.",
+      "Partnered with backend teams on API integrations.",
       "Improved UI rendering and load performance through efficient state management and profiling tools.",
     ],
-    tags: ["ReactJS", "TypeScript", "Accessibility", "Mobile", "DevOps"],
+    tags: ["ReactJS", "TypeScript", "React Native", "Accessibility", "Mobile"],
   },
 ];
 

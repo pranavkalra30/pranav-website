@@ -17,12 +17,11 @@ const skills = [
   "SQL",
   "Machine Learning",
   "Time Series Forecasting",
-  "Azure",
-  "AWS",
+  "FastAPI",
+  "Power BI",
   "ReactJS",
   "TypeScript",
   "Node.js",
-  "Excel",
 ];
 
 const AboutMe = () => {
@@ -78,9 +77,9 @@ const AboutMe = () => {
                       sx={{ color: "#d0e8ff", lineHeight: 1.8 }}
                     >
                       Analytical and data-driven professional with a background
-                      in Electrical Engineering and currently pursuing a
-                      Professional stream of Master of Management in Analytics
-                      (MMA) at McGill University. Proven experience designing
+                      in Electrical Engineering and a recent graduate of the
+                      Master of Management in Analytics (MMA) at McGill
+                      University (Sept 2026). Proven experience designing
                       end-to-end predictive modeling pipelines, engineering
                       robust SQL/Python data workflows, and performing rigorous
                       data validation on financial banking systems. Highly adept
