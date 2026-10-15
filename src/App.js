@@ -5,6 +5,7 @@ import Homescreen from "./Pages/Homescreen";
 import XpressphonePage from "./Pages/XpressphonePage";
 import ModoMubiPage from "./Pages/ModoMubiPage";
 import RetailForecastingPage from "./Pages/RetailForecastingPage";
+import MultiAgentPage from "./Pages/MultiAgentPage";
 import UnderConstruction from "./Pages/UnderConstruction.js";
 import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
@@ -74,6 +75,17 @@ function App() {
           path="/projects/retail-demand-forecasting"
           element={
             <RetailForecastingPage
+              scrollToTop={scrollToTop}
+              isMobile={isMobile}
+              deviceWidth={deviceWidth}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/projects/multi-agent-system"
+          element={
+            <MultiAgentPage
               scrollToTop={scrollToTop}
               isMobile={isMobile}
               deviceWidth={deviceWidth}

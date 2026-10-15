@@ -47,6 +47,7 @@ const projects = [
     description:
       "McGill project building LLM support and operations agents with the OpenAI Agents SDK, featuring tool calling and escalation handling.",
     accent: "#d06a8a",
+    path: "/projects/multi-agent-system",
   },
   {
     title: "Reddit Network Analysis",

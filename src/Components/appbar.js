@@ -3,6 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import DevicesIcon from "@mui/icons-material/Devices";
 import PersonIcon from "@mui/icons-material/Person";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import DownloadIcon from "@mui/icons-material/Download";
 import { styled } from "@mui/system";
 import { Toolbar } from "@mui/material";
 import P from "../Images/Icon.png";
@@ -86,6 +87,28 @@ export default function PrimaryAppBar(props) {
                 }}
               >
                 LinkedIn
+              </Button>
+              <Button
+                variant="outlined"
+                startIcon={<DownloadIcon />}
+                href="/Pranav_Kalra_Resume.pdf"
+                download="Pranav_Kalra_Resume.pdf"
+                sx={{
+                  color: "#53b374",
+                  borderColor: "#53b374",
+                  textTransform: "none",
+                  fontWeight: 600,
+                  borderRadius: "8px",
+                  ml: 1,
+                  "&:hover": {
+                    backgroundColor: "#53b374",
+                    color: "#000",
+                    borderColor: "#53b374",
+                  },
+                  transition: "all 0.2s",
+                }}
+              >
+                Resume
               </Button>
             </div>
           )}

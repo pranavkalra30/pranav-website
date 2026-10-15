@@ -15,6 +15,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const drawerWidth = 240;
 
@@ -33,6 +34,12 @@ const links = [
     label: "Send an Email",
     icon: <MailIcon />,
     url: "mailto:email@pranavkalra.ca",
+  },
+  {
+    label: "Download Resume",
+    icon: <DownloadIcon />,
+    url: "/Pranav_Kalra_Resume.pdf",
+    download: true,
   },
 ];
 
@@ -78,12 +85,22 @@ export default function MobileDrawer() {
         </Box>
         <Divider />
         <List>
-          {links.map(({ label, icon, url }) => (
+          {links.map(({ label, icon, url, download }) => (
             <ListItem key={label} disablePadding>
               <ListItemButton
-                onClick={() =>
-                  window.open(url, "_blank", "noopener,noreferrer")
-                }
+                onClick={() => {
+                  if (download) {
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = "Pranav_Kalra_Resume.pdf";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    setOpen(false);
+                  } else {
+                    window.open(url, "_blank", "noopener,noreferrer");
+                  }
+                }}
               >
                 <ListItemIcon sx={{ color: "white" }}>{icon}</ListItemIcon>
                 <ListItemText primary={label} sx={{ color: "white" }} />
