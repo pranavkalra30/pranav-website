@@ -11,6 +11,7 @@ import BackToTop from "./Components/backToTop";
 import { Suspense, lazy, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import useWindowSize from "./hooks/useWindowSize";
+import ChatWidget from "./Components/ChatWidget";
 
 const FooterPage = lazy(() => import("./Components/footer"));
 
@@ -105,7 +106,13 @@ function App() {
         />
       </Routes>
 
-      <BackToTop scrollToTop={scrollToTop} isMobile={isMobile} deviceWidth={deviceWidth} />
+      <ChatWidget isMobile={isMobile} />
+
+      <BackToTop
+        scrollToTop={scrollToTop}
+        isMobile={isMobile}
+        deviceWidth={deviceWidth}
+      />
 
       <Suspense fallback={<div />}>
         <FooterPage isMobile={isMobile} deviceWidth={deviceWidth} />

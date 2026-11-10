@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  OPENAI_AGENTS_DISABLE_TRACING = "1"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Keeps client-side routes (e.g. /projects/xpressphone) working on refresh.
+# Skip this block if you already have a public/_redirects file doing the same.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
