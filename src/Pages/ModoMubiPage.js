@@ -32,7 +32,12 @@ export default function ModoMubiPage(props) {
       <Button
         startIcon={<ArrowBackIcon />}
         onClick={() => navigate("/")}
-        sx={{ color: "rgba(255,255,255,0.6)", textTransform: "none", mb: 3, "&:hover": { color: "white" } }}
+        sx={{
+          color: "rgba(255,255,255,0.6)",
+          textTransform: "none",
+          mb: 3,
+          "&:hover": { color: "white" },
+        }}
       >
         Back to home
       </Button>
@@ -41,16 +46,40 @@ export default function ModoMubiPage(props) {
         sequence={["Modo Mubi."]}
         wrapper="h1"
         speed={50}
-        style={{ fontSize: props.isMobile ? "2.2em" : "3em", display: "block", margin: "0 0 8px" }}
+        style={{
+          fontSize: props.isMobile ? "2.2em" : "3em",
+          display: "block",
+          margin: "0 0 8px",
+        }}
       />
 
-      <Typography variant="subtitle1" sx={{ color: "#53b374", fontWeight: 600, mb: 3 }}>
+      <Typography
+        variant="subtitle1"
+        sx={{ color: "#53b374", fontWeight: 600, mb: 3 }}
+      >
         Personal Project · Web Development & Design
       </Typography>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, justifyContent: "center", mb: 4 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 1,
+          justifyContent: "center",
+          mb: 4,
+        }}
+      >
         {tags.map((t) => (
-          <Chip key={t} label={t} sx={{ backgroundColor: "#1a3a2a", color: "#53b374", border: "1px solid #53b37455", fontWeight: 600 }} />
+          <Chip
+            key={t}
+            label={t}
+            sx={{
+              backgroundColor: "#1a3a2a",
+              color: "#53b374",
+              border: "1px solid #53b37455",
+              fontWeight: 600,
+            }}
+          />
         ))}
       </Box>
 
@@ -59,12 +88,22 @@ export default function ModoMubiPage(props) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Card sx={{ backgroundColor: "transparent", boxShadow: "none", borderRadius: "15px", mb: 4, display: "inline-block" }}>
+        <Card
+          sx={{
+            backgroundColor: "transparent",
+            boxShadow: "none",
+            borderRadius: "15px",
+            mb: 4,
+            display: "inline-block",
+          }}
+        >
           <img
             src={TheMovieSearchWide}
             alt="Modo Mubi app screenshot"
             style={{
-              width: props.isMobile ? props.deviceWidth * 0.9 : Math.min(props.deviceWidth * 0.75, 1000),
+              width: props.isMobile
+                ? props.deviceWidth * 0.9
+                : Math.min(props.deviceWidth * 0.75, 1000),
               borderRadius: "15px",
             }}
           />
@@ -72,10 +111,20 @@ export default function ModoMubiPage(props) {
       </motion.div>
 
       <Box sx={{ maxWidth: 720, margin: "0 auto", textAlign: "left" }}>
-        <Typography variant="h6" sx={{ color: "white", fontWeight: 700, mb: 2 }}>What I built</Typography>
+        <Typography
+          variant="h6"
+          sx={{ color: "white", fontWeight: 700, mb: 2 }}
+        >
+          What I built
+        </Typography>
         <Box component="ul" sx={{ pl: 2 }}>
           {bullets.map((b, i) => (
-            <Typography component="li" key={i} variant="body1" sx={{ color: "rgba(255,255,255,0.75)", mb: 1.5, lineHeight: 1.8 }}>
+            <Typography
+              component="li"
+              key={i}
+              variant="body1"
+              sx={{ color: "rgba(255,255,255,0.75)", mb: 1.5, lineHeight: 1.8 }}
+            >
               {b}
             </Typography>
           ))}
@@ -84,7 +133,13 @@ export default function ModoMubiPage(props) {
         <Button
           variant="outlined"
           endIcon={<OpenInNewIcon />}
-          onClick={() => window.open("https://frontend--endearing-bavarois-c380b6.netlify.app", "_blank", "noopener,noreferrer")}
+          onClick={() =>
+            window.open(
+              "https://modomubi.netlify.app",
+              "_blank",
+              "noopener,noreferrer",
+            )
+          }
           sx={{
             mt: 3,
             color: "#53b374",
@@ -92,7 +147,11 @@ export default function ModoMubiPage(props) {
             textTransform: "none",
             fontWeight: 600,
             borderRadius: "10px",
-            "&:hover": { backgroundColor: "#53b374", color: "#000", borderColor: "#53b374" },
+            "&:hover": {
+              backgroundColor: "#53b374",
+              color: "#000",
+              borderColor: "#53b374",
+            },
           }}
         >
           View live site
