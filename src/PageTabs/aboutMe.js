@@ -61,8 +61,7 @@ const AboutMe = () => {
                   variant="subtitle1"
                   sx={{ color: "#53b374", fontWeight: 600, mb: 2 }}
                 >
-                  Analytics & Machine Learning | McGill MMA | Full-Stack
-                  Developer
+                  Analytics & Machine Learning | McGill MMA
                 </Typography>
                 <Card
                   sx={{
