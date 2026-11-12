@@ -16,7 +16,7 @@ WORK EXPERIENCE
    - Runs a short-term rental business, using market trend analysis to optimize pricing and listing visibility.
 3) Software Developer, Xpressphone (Mar 2020 to Apr 2022, Toronto).
    - Built the frontend of the company website in ReactJS and helped deploy it.
-4) Frontend Developer, Tata Consultancy Services (Oct 2018 to Nov 2021, Toronto).
+4) Software Developer, Tata Consultancy Services (Oct 2018 to Nov 2021, Toronto).
    - Built secure financial web and mobile applications with ReactJS and TypeScript.
    - Worked with backend teams on API integrations in an Agile/Scrum team using JIRA.
 5) Customer Service Agent, Air Canada (summer 2018, Toronto Pearson Airport): helped passengers with check-in and rebooking.

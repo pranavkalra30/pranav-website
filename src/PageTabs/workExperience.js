@@ -55,7 +55,7 @@ const jobs = [
     tags: ["ReactJS", "JavaScript", "Frontend"],
   },
   {
-    title: "Frontend Developer",
+    title: "Software Developer",
     company: "Tata Consultancy Services",
     location: "Toronto, ON",
     period: "Oct 2018 – Nov 2021",
