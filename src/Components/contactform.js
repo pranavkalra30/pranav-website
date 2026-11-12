@@ -128,12 +128,6 @@ export default function ContactMe(props) {
                   >
                     Send me a message
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "rgba(255,255,255,0.4)", mb: 3 }}
-                  >
-                    email@pranavkalra.ca
-                  </Typography>
 
                   {status === "success" && (
                     <Alert
