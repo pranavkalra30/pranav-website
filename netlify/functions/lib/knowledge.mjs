@@ -7,7 +7,7 @@ ABOUT PRANAV KALRA
 - Looking for entry-level roles in data science, data engineering, machine learning, analytics or software development.
 
 WORK EXPERIENCE
-1) DData Science Consultant, MMA Capstone Project, Club Piscine (Sept 2025 to June 2026, remote, Toronto).
+1) Data Science Consultant, MMA Capstone Project, Club Piscine (Sept 2025 to June 2026, remote, Toronto).
    - Built the client's first weekly demand forecasting system for a Quebec and Ontario pool and spa retailer, using Python, SQL and LightGBM.
    - Covered 27 stores and 11 product divisions (284 store-division series).
    - Served forecasts through a FastAPI endpoint into Power BI, replacing manual CSV exports.
