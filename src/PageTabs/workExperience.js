@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 
 const jobs = [
   {
-    title: "Data Analytics Graduate Consultant – Capstone Project ",
+    title: "Data Science Consultant – MMA Capstone Project ",
     company: "Club Piscine",
-    location: "Remote",
+    location: "Toronto (Remote)",
     period: "Sept 2025 – June 2026",
     color: "#09130e",
     accent: "#c82e7b",
